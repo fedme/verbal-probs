@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid class="buttons-grid">
+    <ion-row>
+      <ion-col text-center>
+        <h1>{{'FAM.TEST_TITLE' | translate}}</h1>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="stimuli-grid one">
+    <ion-row>
+      <ion-col>
+        <img src="assets/img/shapes/{{obj.id}}.png" [style.border-color]="obj.borderColor" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="buttons-grid">
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button large color="secondary" (click)="yes()">{{'FAM.TEST_YES' | translate}}</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button large color="danger" (click)="no()">{{'FAM.TEST_NO' | translate}}</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

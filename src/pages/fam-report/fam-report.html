@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button *ngIf="accuracyPerc >= requiredAccuracy" outline color="secondary" (click)="nextFam()">{{'FAM.NEXT' | translate}}</button>
+      <button  ion-button *ngIf="accuracyPerc < requiredAccuracy" outline color="danger" (click)="repeatFam()">{{'FAM.REPEAT' | translate}}</button>
+      
+      <!-- DEBUG -->
+      <button ion-button *ngIf="accuracyPerc < requiredAccuracy" outline color="dark" (click)="nextFam()">[DEBUG] SKIP</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-6 text-center>
+        <div class="content-wrapper">
+          <h1>{{'FAM.REPORT_TITLE' | translate}}</h1>
+          <p>{{'FAM.REPORT_BODY' | translate:{ perc: accuracyPerc } }}</p>
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

@@ -1,0 +1,45 @@
+{
+    "REGISTRATION": {
+      "TITLE": "Enter participant data",
+      "CODE_LABEL": "Participant code",
+      "GENDER_LABEL": "Participant gender",
+      "MALE": "Male",
+      "FEMALE": "Female",
+      "AGE_LABEL": "Participant age",
+      "GRADE_LABEL": "Participant grade",
+      "SUBMIT": "Begin experiment"
+    },
+
+    "FAM": {
+      "INTRO_TEXT": "Fam Intro text...",
+      "INTRO_NEXT": "Next",
+      "TEST_TITLE": "Have you seen this already?",
+      "TEST_YES": "Yes",
+      "TEST_NO": "No",
+      "TEST_INTRO_TEXT": "You are going to start the fam test phase...",
+      "TEST_INTRO_NEXT": "Next",
+      "NEXT": "Proceed",
+      "REPEAT": "Repeat fam",
+      "REPORT_TITLE": "Performance Report",
+      "REPORT_BODY": "Accuracy: {{perc}}%"
+    },
+
+    "TEST": {
+      "ACTIVE": {
+        "INTRO_TEXT": "Active test intro text...",
+        "INTRO_NEXT": "Next"
+      },
+      "YOKED": {
+        "INTRO_TEXT": "Active test intro text...",
+        "INTRO_NEXT": "Next"
+      },
+      "YES": "Yes",
+      "NO": "No"
+    },
+
+    "END": {
+      "WELL_DONE": "Well done!",
+      "PLAY_AGAIN": "Play again",
+      "PLAY_AGAIN_CONFIRM": "Play again (press again to confirm)"
+    } 
+}
