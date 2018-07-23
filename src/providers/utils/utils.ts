@@ -1,26 +1,25 @@
-import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
 import { CONDITIONS } from '../stimuli/conditions';
 
-@Injectable()
+
 export class Utils {
 
   constructor() {
     console.log('Hello Utils Provider');
   }
 
-  getRandomInt(min, max) {
+  public static getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  shuffleArray(a) {
+  public static shuffleArray(a) {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [a[i], a[j]] = [a[j], a[i]];
     }
   }
 
-  pickRandomFromArray(items: any[], howMany: number = 1) {
+  public static pickRandomFromArray(items: any[], howMany: number = 1) {
     let picked = [];
 
     for (let i=0; i<howMany; i++) {
@@ -36,7 +35,7 @@ export class Utils {
     }
   }
 
-  pickRandFromArrayNoRep(items: any[], howMany: number = 1, forceArray: boolean = false, inPlace: boolean = false) {
+  public static pickRandFromArrayNoRep(items: any[], howMany: number = 1, forceArray: boolean = false, inPlace: boolean = false) {
 
     let elems = items;
     if (!inPlace) {
@@ -59,20 +58,20 @@ export class Utils {
     }
   }
 
-  range(start, end) {
+  public static range(start, end) {
     return Array.from({length: (end - start)}, (v, k) => k + start);
   }
 
-  combine(alphabet, length, curstr) {
+  public static combine(alphabet, length, curstr) {
     if (curstr.length == length) return [curstr];
     var ret = [];
     for (var i = 0; i < alphabet.length; i++) {
-      ret.push.apply(ret, this.combine(alphabet, length, curstr + alphabet[i]));
+      ret.push.apply(ret, Utils.combine(alphabet, length, curstr + alphabet[i]));
     }
     return ret;
   }
 
-  permute(permutation) {
+  public static permute(permutation) {
     var length = permutation.length,
         result = [permutation.slice()],
         c = new Array(length).fill(0),
@@ -96,7 +95,7 @@ export class Utils {
   }
 
   /* Counters */
-  getCounterValue(counterIndex: number = 1) {
+  public static getCounterValue(counterIndex: number = 1) {
     let counterName = "isrc-counter-" + counterIndex;
     if (localStorage.getItem(counterName) === null) {
       return 0;
@@ -104,7 +103,7 @@ export class Utils {
     return parseInt(localStorage.getItem(counterName));
   }
 
-  incrementCounter(counterIndex: number = 1) {
+  public static incrementCounter(counterIndex: number = 1) {
     let counterName = "isrc-counter-" + counterIndex;
     let count: number = 1;
     if (localStorage.getItem(counterName) != null) {
@@ -113,7 +112,7 @@ export class Utils {
     localStorage.setItem(counterName, count.toString());  
   }
 
-  getAllConditions() {
+  public static getAllConditions() {
     // Parse all conditions form local storage
     let allConditions = null;
     if (localStorage.getItem("isrc-all-conditions") != null) {
@@ -129,15 +128,15 @@ export class Utils {
     }
   }
 
-  pickOneCondition(random: boolean = true) {
-    let allConditions = this.getAllConditions();
-    const condition = this.pickRandFromArrayNoRep(allConditions);
+  public static pickOneCondition(random: boolean = true) {
+    let allConditions = Utils.getAllConditions();
+    const condition = Utils.pickRandFromArrayNoRep(allConditions);
     localStorage.setItem("isrc-all-conditions", JSON.stringify(allConditions));
     return condition;
   }
 
-  pickFirstCondition() {
-    let allConditions = this.getAllConditions();
+  public static pickFirstCondition() {
+    let allConditions = Utils.getAllConditions();
     const condition = allConditions[0];
     allConditions.splice(0, 1);
     localStorage.setItem("isrc-all-conditions", JSON.stringify(allConditions));
