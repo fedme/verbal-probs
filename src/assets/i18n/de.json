@@ -9,18 +9,18 @@
       "GRADE_LABEL": "Participant grade",
       "SUBMIT": "Begin experiment"
     },
-    "STIMULI": {
-      "ENTER_QUESTION_MODE": "Enter Question Mode",
-      "CANCEL": "Cancel",
-      "END_QUESTION_MODE": "End Question Mode",
-      "QUESTION_N": "Question n.",
-      "ENTER_GUESS_MODE": "Enter Guess Mode",
-      "END_GUESS_MODE": "End Guess Mode",
-      "GUESS_N": "Guess n.",
-      "END": "End experiment",
-      "END_CONFIRM": "Confirm ending experiment",
-      "REVEAL_TARGET": "Reveal target",
-      "UNREVEAL_TARGET": "Hide target"
+    "INTRO": {
+      "TITLE": "Willkommen, Forscher und Entdecker!",
+      "TEXT_1": "Erkunde mit uns das Weltall und reise zu verschiedenen Planeten und ihren Bewohnern. Begleitest wirst du dabei von deinem treuen Gefährten Robbie, einem Roboter.",
+      "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen Besuch freuen. Dein Freund Robbie weiß bereits ein paar Dinge über die verschiedenen Monster und ihre Eigenschaften.",
+      "TEXT_3": "Bei jedem Besuch wird Robbie dir etwas über die Eigenschaften der Bewohner verraten. Deine Aufgabe als Forscher und Entdecker ist es, Robbies Informationen einzuschätzen.",
+      "ROBOT_TEXT": "Hallo, ich bin Robbie!",
+      "NEXT": "Weiter"
+    },
+    "PLANET": {
+      "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
+      "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
+      "NEXT": "Weiter"
     },
     "END": {
       "WELL_DONE": "Well done!",

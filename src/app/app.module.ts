@@ -14,7 +14,7 @@ import { Pro } from '@ionic/pro';
 
 import { MyApp } from './app.component';
 import { AppInfo } from '../providers/stimuli/app-info';
-import { Api, Utils, Data, Stimuli } from '../providers/providers';
+import { Api, Data, Stimuli } from '../providers/providers';
 
 
 // Ionic Pro
@@ -86,8 +86,7 @@ export class MyErrorHandler implements ErrorHandler {
     Device,
     IonicErrorHandler,
     [{ provide: ErrorHandler, useClass: MyErrorHandler }],
-    Api, 
-    Utils, 
+    Api,
     Data, 
     Stimuli
   ]
