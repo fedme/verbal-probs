@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="transparent">
     <ion-buttons end>
       <button ion-button outline color="secondary" (click)="next()">
-          {{'INTRO.NEXT' | translate}}
+        {{'INTRO.NEXT' | translate}}
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -20,16 +20,21 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="bottom" align-items-end>
-      <ion-col col-2></ion-col>
-      <ion-col col-3 text-center>
-        <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
-      </ion-col>
-      <ion-col col-1></ion-col>
-      <ion-col col-4 text-center>
+    <ion-row class="bottom">
+      <ion-col col-5></ion-col>
+      <ion-col col-2 text-center>
         <img [@fade]="planetState" src="assets/img/planets/{{stimuli.planetRound.planet}}.png" alt="planet">
       </ion-col>
-      <ion-col col-2></ion-col>
+      <ion-col col-5></ion-col>
     </ion-row>
+
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-2 text-center>
+        <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
+      </ion-col>
+      <ion-col col-8></ion-col>
+    </ion-row>
+
   </ion-grid>
 </ion-content>

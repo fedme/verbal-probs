@@ -22,6 +22,8 @@ export class PlanetRound {
     slider_text_a: string;
     slider_text_b: string;
 
+    slider_val: number;
+
 
     constructor(
         id: number,

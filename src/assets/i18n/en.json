@@ -20,6 +20,7 @@
   "PLANET": {
     "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
     "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
+    "QUESTION_STATIC": "Was denkst du:",
     "NEXT": "Weiter"
   },
   "END": {

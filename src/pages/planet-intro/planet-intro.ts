@@ -36,15 +36,17 @@ export class PlanetIntroPage {
     public stimuli: Stimuli
   ) {
     // TODO: REMOVE!
-    this.stimuli.initializeConditions();
+    //this.stimuli.initializeConditions();
   }
 
   ionViewDidEnter() {
     this.slide0();
   }
 
-  next() {
-    this.navCtrl.setRoot("PlanetRoundPage");
+  async next() {
+    this.hideAll();
+    await this.sleep(1100);
+    this.navCtrl.setRoot("PlanetPage");
   }
 
   async slide0() {
@@ -53,6 +55,12 @@ export class PlanetIntroPage {
     this.titleState = true;
     await this.sleep(1000);
     this.rocketState = true;
+  }
+
+  hideAll() {
+    this.planetState = false;
+    this.titleState = false;
+    this.rocketState = false;
   }
 
   sleep(ms: number) {

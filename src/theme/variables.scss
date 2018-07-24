@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  transparent: transparent,
 );
 
 
@@ -56,8 +57,10 @@ $colors: (
 $range-md-knob-width: 50px;
 $range-md-knob-height: 50px;
 $range-md-knob-background-color: #f53d3d;
+$range-md-knob-min-background-color: #f53d3d;
 $range-md-bar-height: 10px;
-$range-md-bar-background-color: #488aff;
+$range-md-bar-background-color: white;
+$range-md-bar-active-background-color: white;
 
 
 

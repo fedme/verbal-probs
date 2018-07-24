@@ -37,20 +37,18 @@ export class IntroPage {
     public translate: TranslateService
   ) {
 
-    translate.get('INTRO.TEXT_1').subscribe((res: string) => {
-      this.text = res;
-    });
-
   }
 
   ionViewDidEnter() {
     this.slide0();
   }
 
-  next() {
+  async next() {
     this.slideNumber++;
 
     if (this.slideNumber > this.lastSlideNumber) {
+      this.hideAll()
+      await this.sleep(600);
       this.navCtrl.setRoot("PlanetIntroPage");
     }
 
@@ -61,6 +59,8 @@ export class IntroPage {
   }
 
   async slide0() {
+    this.text = await this.translate.get('INTRO.TEXT_1').toPromise()
+
     await this.sleep(500);
     this.titleState = true
     await this.sleep(1000);
@@ -69,6 +69,7 @@ export class IntroPage {
 
   async slide1() {
     this.textState = true;
+    await this.sleep(1000);
     this.robotState = true;
   }
 
@@ -86,6 +87,13 @@ export class IntroPage {
     this.text = await this.translate.get('INTRO.TEXT_3').toPromise()
     await this.sleep(100)
     this.textState = true;
+  }
+
+  hideAll() {
+    this.titleState = false;
+    this.rocketState = false;
+    this.robotState = false;
+    this.textState = false;
   }
 
   sleep(ms: number) {
