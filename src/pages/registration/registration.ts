@@ -55,7 +55,7 @@ export class RegistrationPage {
    
       // initialize stimuli
       this.stimuli.initializeConditions();
-      this.navCtrl.setRoot('Intro1Page');
+      this.navCtrl.setRoot('IntroPage');
   }
 
   validateRegistration() {

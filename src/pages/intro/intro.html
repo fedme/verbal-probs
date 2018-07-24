@@ -14,23 +14,25 @@
 
     <ion-row class="text">
       <ion-col text-center>
-          <h1>{{'INTRO.TITLE' | translate}}</h1>
+        <h1 [@fade]="titleState">{{'INTRO.TITLE' | translate}}</h1>
+
+        <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
       </ion-col>
     </ion-row>
 
     <ion-row class="bottom" align-items-end>
       <ion-col col-3>
-        <img src="assets/img/rocket.png" alt="rocket">
+        <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
       </ion-col>
 
       <ion-col col-7 text-center>
-       <div class="speech-bubble">
+       <div [@fade]="robotState" class="speech-bubble">
          <p>{{'INTRO.ROBOT_TEXT' | translate}}</p>
        </div>
       </ion-col>
 
       <ion-col col-2>
-          <img src="assets/img/robot.png" alt="robot">
+        <img [@fade]="robotState" src="assets/img/robot.png" alt="robot">
       </ion-col>
 
     </ion-row>

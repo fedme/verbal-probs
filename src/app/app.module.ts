@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ErrorHandler, NgModule, Injectable, Injector } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -72,7 +73,8 @@ export class MyErrorHandler implements ErrorHandler {
       name: 'data',
       driverOrder: ['sqlite', 'indexeddb', 'websql']
     }),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    BrowserAnimationsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

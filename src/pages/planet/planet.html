@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button outline color="secondary" (click)="next()">
+          {{'INTRO.NEXT' | translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding text-center>
+  <ion-grid>
+
+    <ion-row class="text">
+      <ion-col text-center>
+        <h1 [@fade]="titleState">{{'INTRO.TITLE' | translate}}</h1>
+
+        <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="bottom" align-items-end>
+      <ion-col col-3>
+        <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
+      </ion-col>
+
+      <ion-col col-7 text-center>
+       <div [@fade]="robotState" class="speech-bubble">
+         <p>{{'INTRO.ROBOT_TEXT' | translate}}</p>
+       </div>
+      </ion-col>
+
+      <ion-col col-2>
+        <img [@fade]="robotState" src="assets/img/robot.png" alt="robot">
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
