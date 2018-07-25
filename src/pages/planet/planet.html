@@ -17,8 +17,8 @@
       <ion-col col-2></ion-col>
 
       <ion-col col-3 text-center>
-        <p [@fade]="monsterState" class="feature-label">{{stimuli.planetRound.feature_label_b}}</p>
-        <img [@fade]="monsterState" src="assets/img/monster_pairs/{{stimuli.planetRound.feature}}_b.png" alt="monster">
+        <p [@fade]="monsterState" class="feature-label">{{featureLabelLeft}}</p>
+        <img [@fade]="monsterState" src="assets/img/monster_pairs/{{featureLeft}}.png" alt="monster">
       </ion-col>
 
       <ion-col col-2 text-center>
@@ -26,8 +26,8 @@
       </ion-col>
 
       <ion-col col-3 text-center>
-        <p [@fade]="monsterState" class="feature-label">{{stimuli.planetRound.feature_label_a}}</p>
-        <img [@fade]="monsterState" src="assets/img/monster_pairs/{{stimuli.planetRound.feature}}_a.png" alt="monster">
+        <p [@fade]="monsterState" class="feature-label">{{featureLabelRight}}</p>
+        <img [@fade]="monsterState" src="assets/img/monster_pairs/{{featureRight}}.png" alt="monster">
       </ion-col>
 
       <ion-col col-2></ion-col>
@@ -42,13 +42,13 @@
 
     <ion-row class="slider" align-items-center>
 
-      <ion-col col-2 class="slider-text"><span [@fade]="sliderState">{{stimuli.planetRound.slider_text_b}}</span></ion-col>
+      <ion-col col-2 class="slider-text"><span [@fade]="sliderState">{{sliderTextLeft}}</span></ion-col>
 
       <ion-col col-8 text-center>
         <ion-range [@fade]="sliderState" min="0" max="100" step="1" [(ngModel)]="sliderVal" (ionChange)="sliderChanged($event)"></ion-range>
       </ion-col>
 
-      <ion-col col-2 class="slider-text"><span [@fade]="sliderState">{{stimuli.planetRound.slider_text_a}}</span></ion-col>
+      <ion-col col-2 class="slider-text"><span [@fade]="sliderState">{{sliderTextRight}}</span></ion-col>
 
     </ion-row>
 

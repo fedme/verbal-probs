@@ -1,7 +1,7 @@
 import { Component, trigger, state, style, transition, animate, keyframes } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import {TranslateService} from '@ngx-translate/core';
-import { Stimuli } from '../../providers/providers';
+import { Stimuli, Data } from '../../providers/providers';
 
 @IonicPage()
 @Component({
@@ -35,15 +35,25 @@ export class PlanetPage {
   text1: string;
   text2: string;
   robotText: string;
+  sliderTextLeft: string;
+  sliderTextRight: string;
+  featureLeft: string;
+  featureLabelLeft: string;
+  featureRight: string;
+  featureLabelRight: string;
+  introText: string;
+  questionText: string;
 
   sliderVal: number = 50;
-  changed: boolean = false;
+  sliderTouched: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public translate: TranslateService,
-    public stimuli: Stimuli
+    public stimuli: Stimuli,
+    public data: Data,
+    private toastCtrl: ToastController
   ) {
 
     // TODO: REMOVE!
@@ -52,12 +62,28 @@ export class PlanetPage {
     console.log(this.stimuli.planetRound);
   }
 
+  ionViewDidLoad() {
+    // Select LEFT arrangement of things
+    this.featureLeft = this.stimuli.planetRound.feature + "_b";
+    this.featureLabelLeft = this.stimuli.planetRound.feature_label_b;
+    this.sliderTextLeft = this.stimuli.planetRound.slider_text_b;
+
+    // Select RIGHT arrangement of things
+    this.featureRight = this.stimuli.planetRound.feature + "_a";
+    this.featureLabelRight = this.stimuli.planetRound.feature_label_a;
+    this.sliderTextRight = this.stimuli.planetRound.slider_text_a;
+
+    // Select appropiate ordered text
+    this.introText = this.stimuli.planetRound.intro_text_a_b;
+    this.questionText = this.stimuli.planetRound.question_text_a;
+  }
+
   ionViewDidEnter() {
     this.slide0();
   }
 
   sliderChanged(evt) {
-    this.changed = true;
+    this.sliderTouched = true;
   }
 
   async next() {
@@ -65,7 +91,17 @@ export class PlanetPage {
 
     if (this.slideNumber > this.lastSlideNumber) {
 
-      // TODO: Save slider val
+      if (!this.sliderTouched) {
+        const toast = this.toastCtrl.create({
+          message: "You haven't touched the slider",
+          duration: 1000,
+          position: 'top'
+        });
+        toast.present();
+        return;
+      }
+
+      // Save slider val
       this.stimuli.planetRound.slider_val = this.sliderVal;
 
       if (this.stimuli.areThereMorePlanetRounds()) {
@@ -77,7 +113,8 @@ export class PlanetPage {
 
       else {
 
-        // TODO: Save app data
+        // Save experiment data
+        this.data.save();
         this.hideAll();
         await this.sleep(600);
         this.navCtrl.setRoot("EndPage");
@@ -92,7 +129,7 @@ export class PlanetPage {
 
   async slide0() {
     this.text1 = await this.translate.get('PLANET.INTRO_STATIC').toPromise();
-    this.text2 = this.stimuli.planetRound.intro_text_a_b;
+    this.text2 = this.introText;
     this.robotText = this.stimuli.planetRound.robot_text;
 
     await this.sleep(500);
@@ -112,7 +149,7 @@ export class PlanetPage {
     this.textState = false;
     await this.sleep(600)
     this.text1 = await this.translate.get('PLANET.QUESTION_STATIC').toPromise()
-    this.text2 = this.stimuli.planetRound.question_text_a
+    this.text2 = this.questionText;
     await this.sleep(100)
     this.textState = true;
     this.sliderState = true;

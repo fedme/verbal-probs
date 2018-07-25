@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="transparent">
     <ion-buttons start>
-      <button *ngIf="!nextConfirmed" ion-button (click)="confirmNext()">{{'END.PLAY_AGAIN' | translate}}</button>
-      <button *ngIf="nextConfirmed" ion-button (click)="next()" color="secondary">{{'END.PLAY_AGAIN_CONFIRM' | translate}}</button>
+      <button *ngIf="!nextConfirmed" outline color="danger" ion-button (click)="confirmNext()">{{'END.PLAY_AGAIN' | translate}}</button>
+      <button *ngIf="nextConfirmed" outline color="secondary" ion-button (click)="next()" color="secondary">{{'END.PLAY_AGAIN_CONFIRM' | translate}}</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -12,7 +12,7 @@
 
     <ion-row id="top">
       <ion-col text-center>
-        <h1>{{'END.WELL_DONE' | translate}}</h1>
+        <h1 [@fade]="titleState">{{'END.WELL_DONE' | translate}}</h1>
       </ion-col>
     </ion-row>
 

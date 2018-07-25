@@ -33,28 +33,19 @@ export class Data {
   serializeStimuliData() {
     let data = new Map();
 
-
-    /*
-    // parse queries
-    let nStims = this.stimuli.stims.length;
-    const queries = [];
-    for (let qn=0; qn<this.stimuli.nQueries; qn++) {
-      const stims = this.stimuli.stims.filter(stim => 
-        stim.excluded && stim.queryNumber == qn + 1);
-      stims.sort((a, b) => { return a.exclusionOrder - b.exclusionOrder});
-      queries[qn] = {
-        "type": stims[0].exclusionMode,
-        "n_stims_pre": nStims,
-        "n_exluded_stims": stims.length,
-        "n_stims_post": nStims - stims.length,
-        "excluded_stims": stims
-      }
-      nStims = nStims - stims.length;
+    let rounds = []
+    for (let round of this.stimuli.planetRounds) {
+      rounds.push({
+        "id": round.id,
+        "feature": round.feature,
+        "term": round.term,
+        "termType": round.term_type,
+        "planet": round.planet,
+        "sliderVal": round.slider_val
+      })
     }
-    data.set("n_queries", queries.length)
-    data.set("queries", queries)
-    */
 
+    data.set("planetRounds", rounds)
 
     return this.mapToObj(data);
   }
