@@ -74,7 +74,7 @@ export class PlanetPage {
     this.sliderTextRight = this.stimuli.planetRound.slider_text_a;
 
     // Select appropiate ordered text
-    this.introText = this.stimuli.planetRound.intro_text_a_b;
+    this.introText = this.stimuli.planetRound.intro_text_b_a;
     this.questionText = this.stimuli.planetRound.question_text_a;
   }
 
