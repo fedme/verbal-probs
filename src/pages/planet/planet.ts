@@ -61,7 +61,7 @@ export class PlanetPage {
     // TODO: REMOVE!
     //this.stimuli.initializeConditions();
 
-    console.log(this.stimuli.planetRound);
+    //console.log(this.stimuli.planetRound);
   }
 
   ionViewDidLoad() {
@@ -92,7 +92,6 @@ export class PlanetPage {
   }
 
   async next() {
-    this.slideNumber++;
 
     if (this.mustTouchRobot) {
       const toast = this.toastCtrl.create({
@@ -103,6 +102,8 @@ export class PlanetPage {
       toast.present();
       return;
     }
+
+    this.slideNumber++;
 
     if (this.slideNumber > this.lastSlideNumber) {
 
@@ -142,6 +143,7 @@ export class PlanetPage {
   async slide0() {
     this.text1 = await this.translate.get('PLANET.INTRO_STATIC').toPromise();
     this.text2 = this.introText;
+    this.sliderVal = 50;
 
     await this.sleep(500);
     this.planetState = true
@@ -179,11 +181,18 @@ export class PlanetPage {
   }
 
   robotTouched() {
-    if (!this.mustTouchRobot) return;
 
-    this.slideNumber = 2;
-    this.slide2();
-    this.mustTouchRobot = false;
+    if (this.slideNumber == 1) {
+      if (!this.mustTouchRobot) return;
+      this.slideNumber++;
+      this.slide2();
+      this.mustTouchRobot = false;
+    }
+    else if (this.slideNumber == 2) {
+      this.slideNumber++;
+      this.slide3();
+    }
+    
   }
 
   async slide2() {
