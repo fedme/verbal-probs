@@ -22,6 +22,11 @@ export class PlanetRound {
     slider_text_a: string;
     slider_text_b: string;
 
+    // What was shown on the left and on the right
+    layoutLeft: string;
+    layoutRight: string;
+
+    // Participant input
     slider_val: number;
 
 

@@ -20,7 +20,9 @@
     "PLANET": {
       "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
       "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
-      "QUESTION_STATIC": "Was denkst du:",
+      "QUESTION_STATIC_FREQ": "Was denkst du:",
+      "QUESTION_STATIC_PROB": "Stell dir vor du landest und triffst eines der Monster. Was denkst du:",
+      "ROBOT_CLICK_ME": "Ich weiß etwas! <br>Klick auf mich.",
       "NEXT": "Weiter"
     },
     "END": {

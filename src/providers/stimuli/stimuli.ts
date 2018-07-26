@@ -21,6 +21,7 @@ export class Stimuli {
   participant: Participant;
   conditionCounterOverride: number = null;
   runInBrowser: boolean = false;
+  experimenterNotes: string;
 
   //stimuli
   planetRounds: PlanetRound[] = [];

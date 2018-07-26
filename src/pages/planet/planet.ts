@@ -23,7 +23,7 @@ import { Stimuli, Data } from '../../providers/providers';
 export class PlanetPage {
 
   slideNumber: number = 0;
-  lastSlideNumber: number = 2;
+  lastSlideNumber: number = 3;
 
   monsterState: boolean = false;
   planetState: boolean = false;
@@ -31,6 +31,7 @@ export class PlanetPage {
   robotState: boolean = false;
   textState: boolean = false;
   sliderState: boolean = false;
+  robotTextState:boolean = false;
 
   text1: string;
   text2: string;
@@ -46,6 +47,7 @@ export class PlanetPage {
 
   sliderVal: number = 50;
   sliderTouched: boolean = false;
+  mustTouchRobot: boolean = false;
 
   constructor(
     public navCtrl: NavController, 
@@ -63,15 +65,18 @@ export class PlanetPage {
   }
 
   ionViewDidLoad() {
+
     // Select LEFT arrangement of things
     this.featureLeft = this.stimuli.planetRound.feature + "_b";
     this.featureLabelLeft = this.stimuli.planetRound.feature_label_b;
     this.sliderTextLeft = this.stimuli.planetRound.slider_text_b;
+    this.stimuli.planetRound.layoutLeft = "b"
 
     // Select RIGHT arrangement of things
     this.featureRight = this.stimuli.planetRound.feature + "_a";
     this.featureLabelRight = this.stimuli.planetRound.feature_label_a;
     this.sliderTextRight = this.stimuli.planetRound.slider_text_a;
+    this.stimuli.planetRound.layoutRight = "a"
 
     // Select appropiate ordered text
     this.introText = this.stimuli.planetRound.intro_text_b_a;
@@ -88,6 +93,16 @@ export class PlanetPage {
 
   async next() {
     this.slideNumber++;
+
+    if (this.mustTouchRobot) {
+      const toast = this.toastCtrl.create({
+        message: "You must touch the robot",
+        duration: 1000,
+        position: 'top'
+      });
+      toast.present();
+      return;
+    }
 
     if (this.slideNumber > this.lastSlideNumber) {
 
@@ -112,12 +127,9 @@ export class PlanetPage {
       }
 
       else {
-
-        // Save experiment data
-        this.data.save();
         this.hideAll();
         await this.sleep(600);
-        this.navCtrl.setRoot("EndPage");
+        this.navCtrl.setRoot("ExperimenterNotesPage");
       }
       
     }
@@ -130,7 +142,6 @@ export class PlanetPage {
   async slide0() {
     this.text1 = await this.translate.get('PLANET.INTRO_STATIC').toPromise();
     this.text2 = this.introText;
-    this.robotText = this.stimuli.planetRound.robot_text;
 
     await this.sleep(500);
     this.planetState = true
@@ -142,16 +153,51 @@ export class PlanetPage {
   }
 
   async slide1() {
-    this.robotState = true;
-  }
 
-  async slide2() {
     this.textState = false;
     await this.sleep(600)
-    this.text1 = await this.translate.get('PLANET.QUESTION_STATIC').toPromise()
+
+    if (this.stimuli.planetRound.term_type == "probability") {
+      this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_PROB').toPromise()
+    }
+    else {
+      this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_FREQ').toPromise()
+    }
+    
     this.text2 = this.questionText;
     await this.sleep(100)
     this.textState = true;
+
+
+    this.robotText = await this.translate.get('PLANET.ROBOT_CLICK_ME').toPromise()
+    this.mustTouchRobot = true;
+    await this.sleep(1000)
+
+    this.robotTextState = true;
+    this.robotState = true;
+
+  }
+
+  robotTouched() {
+    if (!this.mustTouchRobot) return;
+
+    this.slideNumber = 2;
+    this.slide2();
+    this.mustTouchRobot = false;
+  }
+
+  async slide2() {
+
+    // slide activated by click on robot
+
+    this.robotTextState = false;
+    await this.sleep(600)
+    this.robotText = this.stimuli.planetRound.robot_text;
+    await this.sleep(100)
+    this.robotTextState = true;
+  }
+
+  async slide3() {
     this.sliderState = true;
   }
 
@@ -160,6 +206,7 @@ export class PlanetPage {
     this.planetState = false;
     this.rocketState = false;
     this.robotState = false;
+    this.robotTextState = false;
     this.textState = false;
     this.sliderState = false;
   }

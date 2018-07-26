@@ -41,7 +41,9 @@ export class Data {
         "term": round.term,
         "termType": round.term_type,
         "planet": round.planet,
-        "sliderVal": round.slider_val
+        "sliderVal": round.slider_val,
+        "layoutLeft": round.layoutLeft,
+        "layoutRight": round.layoutRight
       })
     }
 
@@ -85,7 +87,8 @@ export class Data {
     const duration = Math.floor(Date.now() - this.stimuli.initialTimestamp);
     return {
       "datetime": now.toJSON(),
-      "duration": duration
+      "duration": duration,
+      "experimenterNotes": this.stimuli.experimenterNotes
     }
   }
 

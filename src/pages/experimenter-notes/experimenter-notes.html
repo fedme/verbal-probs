@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="transparent">
+    <ion-buttons start>
+      <button ion-button outline color="secondary" (click)="next()">
+        {{'INTRO.NEXT' | translate}}
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col col-8 text-center>
+        <div [@fade]="contentState" class="content-wrapper">
+
+          <h1>Experimenter Notes</h1>
+          <ion-textarea [(ngModel)]="stimuli.experimenterNotes" rows="6"></ion-textarea>
+        </div>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

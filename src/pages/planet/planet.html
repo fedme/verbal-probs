@@ -64,12 +64,12 @@
 
       <ion-col col-6 text-center>
        <div [@fade]="robotState" class="speech-bubble">
-         <p [innerHTML]="robotText" class="robot-text"></p>
+         <p [@fade]="robotTextState" [innerHTML]="robotText" class="robot-text"></p>
        </div>
       </ion-col>
 
       <ion-col col-2>
-        <img [@fade]="robotState" src="assets/img/robot.png" alt="robot">
+        <img [@fade]="robotState" src="assets/img/robot.png" alt="robot" (click)="robotTouched()">
       </ion-col>
 
     </ion-row>

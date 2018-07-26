@@ -29,8 +29,17 @@ page-intro {
   }
 
   ion-row.text {
-    min-height: 375px;
-    max-height: 375px;
+    min-height: 210px;
+    max-height: 210px;
+  }
+
+  ion-row.planets {
+    min-height: 245px;
+    max-height: 245px;
+
+    img {
+      max-height: 240px;
+    }
   }
 
   .speech-bubble {

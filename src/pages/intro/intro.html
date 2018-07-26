@@ -15,8 +15,13 @@
     <ion-row class="text">
       <ion-col text-center>
         <h1 [@fade]="titleState">{{'INTRO.TITLE' | translate}}</h1>
-
         <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="planets">
+      <ion-col text-center>
+        <img [@fade]="planetsState" src="assets/img/{{planetsImg}}.png" alt="planets">
       </ion-col>
     </ion-row>
 
