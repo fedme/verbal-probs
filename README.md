@@ -1,2 +1,2 @@
-# VISUAL-PROBS
-iSearch visual-probs
+# VERBAL-PROBS
+iSearch verbal-probs
