@@ -4,15 +4,20 @@ page-intro {
   background-size: cover;
   
   h1 {
-    padding-top: 0.4em;
-    font-size: 3.5em;
+    font-size: 3.2em;
     color: white;
   }
 
   p.intro-text {
     color: white;
-    padding: 0.2em 2em 0 2em;
+    padding: 0.1em 2em 0 2em;
+    margin: 0;
     font-size: 2em;
+  }
+
+  .rocket-img {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 
   ion-content {
@@ -25,12 +30,12 @@ page-intro {
   }
 
   ion-row {
-    padding-top: 10px;
+    //padding-top: 10px;
   }
 
   ion-row.text {
-    min-height: 210px;
-    max-height: 210px;
+    min-height: 160px;
+    max-height: 160px;
   }
 
   ion-row.planets {
