@@ -1,8 +1,8 @@
 {
-  "name": "alma",
+  "name": "verbal-probs",
   "integrations": {
     "cordova": {}
   },
-  "type": "ionic-angular",
-  "pro_id": "252674c4"
+  "type": "angular",
+  "id": "753d9079"
 }

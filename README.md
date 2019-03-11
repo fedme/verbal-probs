@@ -1,2 +1,1 @@
-# Verbal-Probs
-iSearch verbal-probs app
+# Verbal-probs Experiment app

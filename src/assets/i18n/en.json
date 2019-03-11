@@ -1,13 +1,26 @@
 {
   "REGISTRATION": {
-    "TITLE": "Enter participant data",
-    "CODE_LABEL": "Participant code",
-    "GENDER_LABEL": "Participant gender",
+    "TITLE": "Registration",
+    "PARTICIPANT_DATA": "Participant Data",
+    "EXPERIMENT_SETTINGS": "Experiment Settings",
+    "CODE_LABEL": "Code",
+    "GENDER_LABEL": "Gender",
     "MALE": "Male",
     "FEMALE": "Female",
-    "AGE_LABEL": "Participant age",
-    "GRADE_LABEL": "Participant grade",
+    "AGE_LABEL": "Age",
+    "GRADE_LABEL": "Grade",
     "SUBMIT": "Begin experiment"
+  },
+  "END": {
+    "END": "End",
+    "WELL_DONE": "Well done!",
+    "PLAY_AGAIN": "Play again",
+    "PLAY_AGAIN_CONFIRM": "Play again (press again to confirm)"
+  },
+  "UI": {
+    "NEXT": "Next",
+    "BACK": "Back",
+    "End": "End"
   },
   "INTRO": {
     "TITLE": "Willkommen, Forscher und Entdecker!",
@@ -24,10 +37,5 @@
     "QUESTION_STATIC_PROB": "Stell dir vor du landest und triffst eines der Monster. Was denkst du:",
     "ROBOT_CLICK_ME": "Ich weiß etwas! <br>Klick auf mich.",
     "NEXT": "Weiter"
-  },
-  "END": {
-    "WELL_DONE": "Well done!",
-    "PLAY_AGAIN": "Play again",
-    "PLAY_AGAIN_CONFIRM": "Play again (press again to confirm)"
-  } 
+  }
 }

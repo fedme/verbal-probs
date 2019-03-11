@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Intro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen>
+  <ion-grid fixed size-md>
+
+    <ion-row class="text">
+      <ion-col text-center>
+        <h1 [@fade]="titleState">{{'PLANET.TRAVEL_TEXT' | translate}}</h1>
+
+        <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="bottom">
+      <ion-col col-5></ion-col>
+      <ion-col col-2 text-center>
+        <img [@fade]="planetState" src="assets/img/planets/{{stimuli.planetRound.planet}}.png" alt="planet">
+      </ion-col>
+      <ion-col col-5></ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-2 text-center>
+        <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
+      </ion-col>
+      <ion-col col-8></ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

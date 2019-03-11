@@ -1,96 +1,84 @@
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ErrorHandler, NgModule, Injectable, Injector } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { IonicStorageModule } from '@ionic/storage';
-import { File } from '@ionic-native/file';
-import { AndroidFullScreen } from '@ionic-native/android-full-screen';
-import { Device } from '@ionic-native/device';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule, RouteReuseStrategy, Routes } from '@angular/router';
+
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Pro } from '@ionic/pro';
+import { ErrorHandler, Injectable } from '@angular/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
+import { Device } from '@ionic-native/device/ngx';
+import { File } from '@ionic-native/file/ngx';
 
-import { MyApp } from './app.component';
-import { AppInfo } from '../providers/stimuli/app-info';
-import { Api, Data, Stimuli } from '../providers/providers';
+import { IonicStorageModule } from '@ionic/storage';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AppInfo } from './app.info';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
-// Ionic Pro
+// Ionic Pro setup
 Pro.init(AppInfo.id, {
   appVersion: AppInfo.version
 })
 
+// Ionic Storage config
+const storageConfig = {
+  name: AppInfo.id,
+  driverOrder: ['sqlite', 'indexeddb', 'websql']
+}
 
-// The translate loader needs to know where to load i18n files
-// in Ionic's static asset pipeline.
+// Ionic Monitoring: custom error handler
+@Injectable()
+export class MyErrorHandler extends ErrorHandler {
+  constructor() { super() }
+  handleError(err: any): void {
+    Pro.monitoring.handleNewError(err);
+    console.log(err);
+  }
+}
+
+// Ngx-Translate setup
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
-
-// Error Handler
-@Injectable()
-export class MyErrorHandler implements ErrorHandler {
-  ionicErrorHandler: IonicErrorHandler;
-
-  constructor(injector: Injector) {
-    try {
-      this.ionicErrorHandler = injector.get(IonicErrorHandler);
-    } catch(e) {
-      // Unable to get the IonicErrorHandler provider, ensure
-      // IonicErrorHandler has been added to the providers list below
-    }
-  }
-
-  handleError(err: any): void {
-    Pro.monitoring.handleNewError(err);
-    // Remove this if you want to disable Ionic's auto exception handling
-    // in development mode.
-    this.ionicErrorHandler && this.ionicErrorHandler.handleError(err);
+const translateConfig = {
+  loader: {
+    provide: TranslateLoader,
+    useFactory: (createTranslateLoader),
+    deps: [HttpClient]
   }
 }
 
 
-// App Module
 @NgModule({
-  declarations: [
-    MyApp
-  ],
+  declarations: [AppComponent],
+  entryComponents: [],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    IonicStorageModule.forRoot(storageConfig),
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
-    }),
-    IonicStorageModule.forRoot({
-      name: 'data',
-      driverOrder: ['sqlite', 'indexeddb', 'websql']
-    }),
-    IonicModule.forRoot(MyApp),
-    BrowserAnimationsModule
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp
+    TranslateModule.forRoot(translateConfig),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: ErrorHandler, useClass: MyErrorHandler },
     AndroidFullScreen,
-    File,
     Device,
-    IonicErrorHandler,
-    [{ provide: ErrorHandler, useClass: MyErrorHandler }],
-    Api,
-    Data, 
-    Stimuli
-  ]
+    File
+  ],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

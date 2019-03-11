@@ -1,33 +1,36 @@
 {
-    "REGISTRATION": {
-      "TITLE": "Enter participant data",
-      "CODE_LABEL": "Participant code",
-      "GENDER_LABEL": "Participant gender",
-      "MALE": "Male",
-      "FEMALE": "Female",
-      "AGE_LABEL": "Participant age",
-      "GRADE_LABEL": "Participant grade",
-      "SUBMIT": "Begin experiment"
-    },
-    "INTRO": {
-      "TITLE": "Willkommen, Forscher und Entdecker!",
-      "TEXT_1": "Erkunde mit uns das Weltall und reise zu verschiedenen Planeten und ihren Bewohnern. Begleitest wirst du dabei von deinem treuen Gefährten Robbie, einem Roboter.",
-      "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen Besuch freuen. Dein Freund Robbie weiß bereits ein paar Dinge über die verschiedenen Monster und ihre Eigenschaften.",
-      "TEXT_3": "Bei jedem Besuch wird Robbie dir etwas über die Eigenschaften der Bewohner verraten. Deine Aufgabe als Forscher und Entdecker ist es, Robbies Informationen einzuschätzen.",
-      "ROBOT_TEXT": "Hallo, ich bin Robbie!",
-      "NEXT": "Weiter"
-    },
-    "PLANET": {
-      "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
-      "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
-      "QUESTION_STATIC_FREQ": "Was denkst du:",
-      "QUESTION_STATIC_PROB": "Stell dir vor du landest und triffst eines der Monster. Was denkst du:",
-      "ROBOT_CLICK_ME": "Ich weiß etwas! <br>Klick auf mich.",
-      "NEXT": "Weiter"
-    },
-    "END": {
-      "WELL_DONE": "Well done!",
-      "PLAY_AGAIN": "Play again",
-      "PLAY_AGAIN_CONFIRM": "Play again (press again to confirm)"
-    } 
+  "REGISTRATION": {
+    "TITLE": "Registration",
+    "PARTICIPANT_DATA": "Participant Data",
+    "EXPERIMENT_SETTINGS": "Experiment Settings",
+    "CODE_LABEL": "Code",
+    "GENDER_LABEL": "Gender",
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "AGE_LABEL": "Age",
+    "GRADE_LABEL": "Grade",
+    "SUBMIT": "Begin experiment"
+  },
+  "END": {
+    "END": "Ende",
+    "WELL_DONE": "Gut Gemacht!",
+    "PLAY_AGAIN": "Wieder Spielen",
+    "PLAY_AGAIN_CONFIRM": "Wieder Spielen (press again to confirm)"
+  },
+  "INTRO": {
+    "TITLE": "Willkommen, Forscher und Entdecker!",
+    "TEXT_1": "Erkunde mit uns das Weltall und reise zu verschiedenen Planeten und ihren Bewohnern. Begleitest wirst du dabei von deinem treuen Gefährten Robbie, einem Roboter.",
+    "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen Besuch freuen. Dein Freund Robbie weiß bereits ein paar Dinge über die verschiedenen Monster und ihre Eigenschaften.",
+    "TEXT_3": "Bei jedem Besuch wird Robbie dir etwas über die Eigenschaften der Bewohner verraten. Deine Aufgabe als Forscher und Entdecker ist es, Robbies Informationen einzuschätzen.",
+    "ROBOT_TEXT": "Hallo, ich bin Robbie!",
+    "NEXT": "Weiter"
+  },
+  "PLANET": {
+    "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
+    "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
+    "QUESTION_STATIC_FREQ": "Was denkst du:",
+    "QUESTION_STATIC_PROB": "Stell dir vor du landest und triffst eines der Monster. Was denkst du:",
+    "ROBOT_CLICK_ME": "Ich weiß etwas! <br>Klick auf mich.",
+    "NEXT": "Weiter"
+  }
 }
