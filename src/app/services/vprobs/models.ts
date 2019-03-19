@@ -1,57 +1,57 @@
 import { FEATURE_MAPPING } from './feature_mapping';
 import { FEATURE_TERM_MAPPING } from './feature_term_mapping';
-import { Utils } from "../common/utils";
+import { Utils } from '../common/utils';
 
 export const PRACTICE_FREQ_TERMS: string[] = [
-    "nie",
-    "immer",
-    "??"
-]
+    'nie',
+    'immer',
+    '??'
+];
 
 export const TEST_FREQ_TERMS: string[] = [
-    "selten",
-    "gelegentlich",
-    "manchmal",
-    "häufig",
-    "oft",
-    "meistens"
-]
+    'selten',
+    'gelegentlich',
+    'manchmal',
+    'häufig',
+    'oft',
+    'meistens'
+];
 
 export const PRACTICE_PROB_TERMS: string[] = [
-    "unmöglich",
-    "sicher",
-    "???"
-]
+    'unmöglich',
+    'sicher',
+    '???'
+];
 
 export const TEST_PROB_TERMS: string[] = [
-    "unwahrscheinlich",
-    "möglich",
-    "eventuell",
-    "vielleicht",
-    "unsicher",
-    "wahrscheinlich"
-]
+    'unwahrscheinlich',
+    'möglich',
+    'eventuell',
+    'vielleicht',
+    'unsicher',
+    'wahrscheinlich'
+];
 
 export const FEATURES: string[] = [
-    "horns",
-    "wings",
-    "antenna",
-    "antlers",
-    "bellybutton",
-    "hair",
-    "moustache",
-    "paws",
-    "point",
-    "scissors",
-    "spikes",
-    "spots",
-    "stripe",
-    "tail",
-    "teeth",
-    "tentacles"
-]
+    'horns',
+    'wings',
+    'antenna',
+    'antlers',
+    'bellybutton',
+    'hair',
+    'moustache',
+    'paws',
+    'point',
+    'scissors',
+    'spikes',
+    'spots',
+    'stripe',
+    'tail',
+    'teeth',
+    'tentacles'
+];
 
-export const PLANETS: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+export const PLANETS: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 export class PlanetRound {
 
@@ -84,7 +84,7 @@ export class PlanetRound {
 
     constructor(
         id: number,
-        feature: string, 
+        feature: string,
         term: string,
         planet: number
     ) {
@@ -97,8 +97,8 @@ export class PlanetRound {
 
     parseProperties() {
         // gather info dependent on feature
-        for (let fm of FEATURE_MAPPING.slice()) {
-            if (fm.feature == this.feature) {
+        for (const fm of FEATURE_MAPPING.slice()) {
+            if (fm.feature === this.feature) {
                 this.feature_label_a = fm.feature_label_a;
                 this.feature_label_b = fm.feature_label_b;
                 this.intro_text_a_b = fm.intro_text_a_b;
@@ -108,21 +108,21 @@ export class PlanetRound {
         }
 
         // gather info dependent on term and feature
-        for (let ftm of FEATURE_TERM_MAPPING.slice()) {
-            if (ftm.feature == this.feature && ftm.term == this.term) {
+        for (const ftm of FEATURE_TERM_MAPPING.slice()) {
+            if (ftm.feature === this.feature && ftm.term === this.term) {
                 this.term_type = ftm.term_type;
-                this.question_text_a = ftm.question_text_a
-                this.question_text_b = ftm.question_text_b
-                this.robot_text = ftm.robot_text
-                this.slider_text_a = ftm.slider_text_a
-                this.slider_text_b = ftm.slider_text_b
+                this.question_text_a = ftm.question_text_a;
+                this.question_text_b = ftm.question_text_b;
+                this.robot_text = ftm.robot_text;
+                this.slider_text_a = ftm.slider_text_a;
+                this.slider_text_b = ftm.slider_text_b;
                 break;
             }
         }
     }
 
     public toString(): string {
-        return "PlanetRound: " + this.id + " [" + this.feature + "] [" + this.term + "] [" + this.planet + "]";
+        return 'PlanetRound: ' + this.id + ' [' + this.feature + '] [' + this.term + '] [' + this.planet + ']';
     }
 
     public equals(obj: PlanetRound): boolean {
@@ -132,8 +132,6 @@ export class PlanetRound {
 }
 
 export class TestBattery {
-    planets: PlanetRound[];
-    private planetIndex: number;
 
     constructor(planets: PlanetRound[]) {
         this.planets = planets;
@@ -141,8 +139,37 @@ export class TestBattery {
     }
 
     public get currentPlanet(): PlanetRound {
-        if (this.planetIndex >= this.planets.length) return null;
+        if (this.planetIndex >= this.planets.length) { return null; }
         return this.planets[this.planetIndex];
+    }
+    planets: PlanetRound[];
+    planetIndex: number;
+
+    public static getDefault(): TestBattery {
+
+        // Get terms, features and planets
+        const freq_terms = TEST_FREQ_TERMS.slice();
+        const prob_terms = TEST_PROB_TERMS.slice();
+        const terms = freq_terms.concat(prob_terms);
+        const features = FEATURES.slice();
+        const planets = PLANETS.slice();
+
+        // Randomize their order
+        Utils.shuffleArray(terms);
+        Utils.shuffleArray(features);
+        Utils.shuffleArray(planets);
+
+        // Create planet rounds
+        const rounds: PlanetRound[] = [];
+        for (let i = 0; i < terms.length; i++) {
+            rounds.push(
+                new PlanetRound(i + 1, features[i], terms[i], planets[i])
+            );
+        }
+
+        const battery = new TestBattery(rounds);
+        Utils.shuffleArray(battery.planets);
+        return battery;
     }
 
     public isLastPlanet(): boolean {
@@ -151,33 +178,6 @@ export class TestBattery {
 
     public nextPlanet() {
         this.planetIndex++;
-    }
-
-    public static getDefault(): TestBattery {
-
-        // Get terms, features and planets
-        const freq_terms = TEST_FREQ_TERMS.slice();
-        const prob_terms = TEST_PROB_TERMS.slice();
-        let terms = freq_terms.concat(prob_terms);
-        let features = FEATURES.slice();
-        let planets = PLANETS.slice();
-
-        // Randomize their order
-        Utils.shuffleArray(terms)
-        Utils.shuffleArray(features)
-        Utils.shuffleArray(planets)
-
-        // Create planet rounds
-        let rounds: PlanetRound[] = [];
-        for (let i=0; i<terms.length; i++) {
-            rounds.push(
-                new PlanetRound(i+1, features[i], terms[i], planets[i])
-            );
-        }
-
-        const battery = new TestBattery(rounds);
-        Utils.shuffleArray(battery.planets);
-        return battery;
     }
 }
 
@@ -262,14 +262,13 @@ export class MemoryCheck {
     }
 
     chooseByIndex(i: number) {
-        if (i < this.possibleChoices.length)
+        if (i < this.possibleChoices.length) {
             this.choose(this.possibleChoices[i]);
+        }
     }
 }
 
 export class MemoryCheckBattery {
-    checks: MemoryCheck[];
-    private checkIndex: number;
 
     constructor(checks: MemoryCheck[]) {
         this.checks = checks;
@@ -277,21 +276,15 @@ export class MemoryCheckBattery {
     }
 
     public get currentCheck(): MemoryCheck {
-        if (this.checkIndex >= this.checks.length) return null;
+        if (this.checkIndex >= this.checks.length) { return null; }
         return this.checks[this.checkIndex];
     }
 
     public get visualIndex(): number {
         return this.checkIndex + 1;
     }
-
-    public isLastCheck(): boolean {
-        return this.checkIndex >= this.checks.length - 1;
-    }
-
-    public nextCheck() {
-        this.checkIndex++;
-    }
+    checks: MemoryCheck[];
+    private checkIndex: number;
 
     public static getDefault(): MemoryCheckBattery {
         return new MemoryCheckBattery([
@@ -300,6 +293,14 @@ export class MemoryCheckBattery {
             new MemoryCheck(),
             new MemoryCheck(),
         ]);
+    }
+
+    public isLastCheck(): boolean {
+        return this.checkIndex >= this.checks.length - 1;
+    }
+
+    public nextCheck() {
+        this.checkIndex++;
     }
 }
 
@@ -317,14 +318,13 @@ export class SecondTestRound {
     }
 
     chooseInstructor(i: number) {
-        if (i < this.possibleChoices.length)
+        if (i < this.possibleChoices.length) {
             this.choice = this.possibleChoices[i];
+        }
     }
 }
 
 export class SecondTestBattery {
-    tests: SecondTestRound[];
-    private testIndex: number;
 
     constructor(tests: SecondTestRound[]) {
         this.tests = tests;
@@ -332,17 +332,11 @@ export class SecondTestBattery {
     }
 
     public get currentTest(): SecondTestRound {
-        if (this.testIndex >= this.tests.length) return null;
+        if (this.testIndex >= this.tests.length) { return null; }
         return this.tests[this.testIndex];
     }
-
-    public isLastTest(): boolean {
-        return this.testIndex >= this.tests.length - 1;
-    }
-
-    public nextTest() {
-        this.testIndex++;
-    }
+    tests: SecondTestRound[];
+    private testIndex: number;
 
     public static getDefault(): SecondTestBattery {
         const battery = new SecondTestBattery([
@@ -356,11 +350,17 @@ export class SecondTestBattery {
         Utils.shuffleArray(battery.tests);
         return battery;
     }
+
+    public isLastTest(): boolean {
+        return this.testIndex >= this.tests.length - 1;
+    }
+
+    public nextTest() {
+        this.testIndex++;
+    }
 }
 
 export class ExplanationBattery {
-    explanations: Environment[];
-    private explanationIndex: number;
 
     constructor(exps: Environment[]) {
         this.explanations = exps;
@@ -368,17 +368,11 @@ export class ExplanationBattery {
     }
 
     public get currentExplanation(): string {
-        if (this.explanationIndex >= this.explanations.length) return null;
+        if (this.explanationIndex >= this.explanations.length) { return null; }
         return this.explanations[this.explanationIndex];
     }
-
-    public isLastExplanation(): boolean {
-        return this.explanationIndex >= this.explanations.length - 1;
-    }
-
-    public nextExplanation() {
-        this.explanationIndex++;
-    }
+    explanations: Environment[];
+    private explanationIndex: number;
 
     public static getDefault(): ExplanationBattery {
         const battery = new ExplanationBattery([
@@ -387,6 +381,14 @@ export class ExplanationBattery {
             Environment.Houses
         ]);
         return battery;
+    }
+
+    public isLastExplanation(): boolean {
+        return this.explanationIndex >= this.explanations.length - 1;
+    }
+
+    public nextExplanation() {
+        this.explanationIndex++;
     }
 }
 
@@ -407,9 +409,6 @@ export class Video {
 }
 
 export class Condition {
-    id: string;
-    videos: Video[] = [];
-    private videoIndex: number;
 
     constructor(id: string, videos: Video[] = []) {
         this.id = id;
@@ -418,17 +417,12 @@ export class Condition {
     }
 
     public get currentVideo(): Video {
-        if (this.videoIndex >= this.videos.length) return null;
+        if (this.videoIndex >= this.videos.length) { return null; }
         return this.videos[this.videoIndex];
     }
-
-    public isLastVideo(): boolean {
-        return this.videoIndex >= this.videos.length - 1;
-    }
-
-    public nextVideo() {
-        this.videoIndex++;
-    }
+    id: string;
+    videos: Video[] = [];
+    private videoIndex: number;
 
     static getAll(): Condition[] {
         return [
@@ -469,7 +463,15 @@ export class Condition {
                 ]
             )
         ];
-    };
+    }
+
+    public isLastVideo(): boolean {
+        return this.videoIndex >= this.videos.length - 1;
+    }
+
+    public nextVideo() {
+        this.videoIndex++;
+    }
 
 }
 

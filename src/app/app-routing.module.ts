@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'registration', loadChildren: './registration/registration.module#RegistrationPageModule' },
   { path: 'intro', loadChildren: './intro/intro.module#IntroPageModule' },
   { path: 'planet-intro', loadChildren: './planet-intro/planet-intro.module#PlanetIntroPageModule' },
+  { path: 'planet', loadChildren: './planet/planet.module#PlanetPageModule' },
   { path: 'end', loadChildren: './end/end.module#EndPageModule' }
 ];
 

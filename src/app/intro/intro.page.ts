@@ -22,17 +22,17 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class IntroPage implements OnInit {
 
-  slideNumber: number = 0;
-  lastSlideNumber: number = 3;
+  slideNumber = 0;
+  lastSlideNumber = 3;
 
-  titleState: boolean = false;
-  rocketState: boolean = false;
-  robotState: boolean = false;
-  textState: boolean = false;
-  planetsState: boolean = false;
+  titleState = false;
+  rocketState = false;
+  robotState = false;
+  textState = false;
+  planetsState = false;
 
   text: string;
-  planetsImg: string = "intro_planets";
+  planetsImg = 'intro_planets';
 
   constructor(
     public vprobs: VprobsService,
@@ -40,6 +40,7 @@ export class IntroPage implements OnInit {
     private alertCtrl: AlertController,
     private translate: TranslateService
   ) {
+    this.vprobs.setupExperiment(); // TODO: REMOVE!
 
   }
 
@@ -51,9 +52,9 @@ export class IntroPage implements OnInit {
     this.slideNumber++;
 
     if (this.slideNumber > this.lastSlideNumber) {
-      this.hideAll()
+      this.hideAll();
       await this.sleep(600);
-      this.navCtrl.navigateRoot("/planet-intro");
+      this.navCtrl.navigateRoot('/planet-intro');
     }
 
     if (typeof this['slide' + this.slideNumber] === 'function') {
@@ -63,13 +64,13 @@ export class IntroPage implements OnInit {
   }
 
   async slide0() {
-    this.text = await this.translate.get('INTRO.TEXT_1').toPromise()
-    this.planetsImg = "intro_planets"
+    this.text = await this.translate.get('INTRO.TEXT_1').toPromise();
+    this.planetsImg = 'intro_planets';
 
     await this.sleep(500);
-    this.titleState = true
+    this.titleState = true;
     await this.sleep(1000);
-    this.rocketState = true
+    this.rocketState = true;
   }
 
   async slide1() {
@@ -82,19 +83,19 @@ export class IntroPage implements OnInit {
   async slide2() {
     this.textState = false;
     this.planetsState = false;
-    await this.sleep(600)
-    this.text = await this.translate.get('INTRO.TEXT_2').toPromise()
-    this.planetsImg = "intro_planets_with_monsters"
-    await this.sleep(100)
+    await this.sleep(600);
+    this.text = await this.translate.get('INTRO.TEXT_2').toPromise();
+    this.planetsImg = 'intro_planets_with_monsters';
+    await this.sleep(100);
     this.textState = true;
     this.planetsState = true;
   }
 
   async slide3() {
     this.textState = false;
-    await this.sleep(600)
-    this.text = await this.translate.get('INTRO.TEXT_3').toPromise()
-    await this.sleep(100)
+    await this.sleep(600);
+    this.text = await this.translate.get('INTRO.TEXT_3').toPromise();
+    await this.sleep(100);
     this.textState = true;
   }
 

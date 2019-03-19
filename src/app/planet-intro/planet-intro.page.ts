@@ -22,12 +22,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class PlanetIntroPage implements OnInit {
 
-  slideNumber: number = 0;
-  lastSlideNumber: number = 3;
+  slideNumber = 0;
+  lastSlideNumber = 3;
 
-  planetState: boolean = false;
-  titleState: boolean = false;
-  rocketState: boolean = false;
+  planetState = false;
+  titleState = false;
+  rocketState = false;
 
   constructor(
     public vprobs: VprobsService,
@@ -35,7 +35,7 @@ export class PlanetIntroPage implements OnInit {
     private alertCtrl: AlertController,
     private translate: TranslateService
   ) {
-
+    this.vprobs.setupExperiment(); // TODO: REMOVE!
   }
 
   ngOnInit() {
@@ -45,7 +45,7 @@ export class PlanetIntroPage implements OnInit {
   async next() {
     this.hideAll();
     await this.sleep(1100);
-    this.navCtrl.navigateRoot("/planet-page");
+    this.navCtrl.navigateRoot('/planet');
   }
 
   async slide0() {

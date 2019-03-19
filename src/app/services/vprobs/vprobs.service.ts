@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IExperiment } from '../common/experiment.interface';
-import { Video, Condition, TestBattery, PlanetRound, MemoryCheck, ExplanationBattery, MemoryCheckBattery, SecondTestBattery } from './models';
+// tslint:disable-next-line:max-line-length
+import { Condition, TestBattery, PlanetRound, MemoryCheck, ExplanationBattery, MemoryCheckBattery, SecondTestBattery } from './models';
 import { Utils } from '../common/utils';
 
 @Injectable({
@@ -36,13 +37,12 @@ export class VprobsService implements IExperiment {
     let ids = [];
     try {
       ids = JSON.parse(localStorage.getItem('isrc-vprobs-conds'));
-    }
-    catch(error) {
+    } catch (error) {
       console.log('Error parsing condition ids from json', error);
     }
-    
+
     // If not present, set initial condition ids
-    if (ids == null || ids.length == 0) {
+    if (ids == null || ids.length === 0) {
       ids = this.setInitialConditions();
     }
 

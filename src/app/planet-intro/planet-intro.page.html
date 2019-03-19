@@ -13,25 +13,24 @@
     <ion-row class="text">
       <ion-col text-center>
         <h1 [@fade]="titleState">{{'PLANET.TRAVEL_TEXT' | translate}}</h1>
-
-        <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
       </ion-col>
     </ion-row>
 
-    <ion-row class="bottom">
-      <ion-col col-5></ion-col>
-      <ion-col col-2 text-center>
-        <img [@fade]="planetState" src="assets/img/planets/{{stimuli.planetRound.planet}}.png" alt="planet">
-      </ion-col>
-      <ion-col col-5></ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col col-2></ion-col>
-      <ion-col col-2 text-center>
+    <ion-row class="bottom" justify-content-center align-items-center>
+      <ion-col size="3"></ion-col>
+      <ion-col size="2" text-center>
         <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
       </ion-col>
-      <ion-col col-8></ion-col>
+      <ion-col size="4" text-center>
+        <img [@fade]="planetState" src="assets/img/planets/{{vprobs.testBattery.currentPlanet.planet}}.png" alt="planet">
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+
+    <ion-row justify-content-center align-items-center class="planets-progress">
+      <ion-col *ngFor="let planet of vprobs.testBattery.planets; let i = index">
+        <img [ngClass]="{'unknown': i > vprobs.testBattery.planetIndex}" src="assets/img/planets/{{planet.planet}}.png" alt="{{planet.planet}}">
+      </ion-col>
     </ion-row>
 
   </ion-grid>
