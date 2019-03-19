@@ -86,10 +86,12 @@ export class PlanetPage implements OnInit {
   async next() {
 
     if (this.mustTouchRobot) {
+      const msg = await this.translate.get('DIALOGS.MUST_TOUCH_ROBOT').toPromise();
       const toast = await this.toastCtrl.create({
-        message: 'You must touch the robot',
+        message: msg,
         duration: 1000,
-        position: 'top'
+        position: 'top',
+        color: 'danger'
       });
       toast.present();
       return;
@@ -100,10 +102,12 @@ export class PlanetPage implements OnInit {
     if (this.slideNumber > this.lastSlideNumber) {
 
       if (!this.sliderTouched) {
+        const msg = await this.translate.get('DIALOGS.MUST_TOUCH_SLIDER').toPromise();
         const toast = await this.toastCtrl.create({
-          message: 'You haven\'t touched the slider',
+          message: msg,
           duration: 1000,
-          position: 'top'
+          position: 'top',
+          color: 'danger'
         });
         toast.present();
         return;

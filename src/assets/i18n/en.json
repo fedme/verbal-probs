@@ -37,5 +37,9 @@
     "QUESTION_STATIC_PROB": "Stell dir vor du landest und triffst eines der Monster. Was denkst du:",
     "ROBOT_CLICK_ME": "Ich weiß etwas! <br>Klick auf mich.",
     "NEXT": "Weiter"
+  },
+  "DIALOGS": {
+    "MUST_TOUCH_ROBOT": "You must touch the robot",
+    "MUST_TOUCH_SLIDER": "You haven't touched the slider"
   }
 }
