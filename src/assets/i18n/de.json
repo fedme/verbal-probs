@@ -18,10 +18,11 @@
     "PLAY_AGAIN_CONFIRM": "Wieder Spielen (press again to confirm)"
   },
   "INTRO": {
-    "TITLE": "Willkommen, Forscher und Entdecker!",
-    "TEXT_1": "Erkunde mit uns das Weltall und reise zu verschiedenen Planeten und ihren Bewohnern. Begleitest wirst du dabei von deinem treuen Gefährten Robbie, einem Roboter.",
+    "TITLE": "Herzlich Willkommen Forscher und Entdecker!",
+    "TITLE_F": "Herzlich Willkommen Forscherin und Entdeckerin!",
+    "TEXT_1": "Erkunde mit uns das Weltall, reise zu verschiedenen Planeten und entdecke die dort lebenden Monster! Begleitet wirst du dabei von deinem treuen Gefährten Robbie, dem Roboter!",
     "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen Besuch freuen. Dein Freund Robbie weiß bereits ein paar Dinge über die verschiedenen Monster und ihre Eigenschaften.",
-    "TEXT_3": "Bei jedem Besuch wird Robbie dir etwas über die Eigenschaften der Bewohner verraten. Deine Aufgabe als Forscher und Entdecker ist es, Robbies Informationen einzuschätzen.",
+    "TEXT_3": "Bei jedem Besuch wird Robbie dir etwas über die Eigenschaften der Monster verraten. Deine Aufgabe ist es, mit Robbies Hilfe die richtigen Antworten zu Fragen über die Monster zu finden!",
     "ROBOT_TEXT": "Hallo, ich bin Robbie!",
     "NEXT": "Weiter"
   },

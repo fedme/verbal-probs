@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Intro</ion-title>
+    <ion-title></ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
     </ion-buttons>
@@ -14,7 +14,11 @@
 
     <ion-row class="text">
       <ion-col text-center>
-        <h1 [@fade]="titleState">{{'INTRO.TITLE' | translate}}</h1>
+        <h1 *ngIf="app.participant.gender == 'female'; else defaultTitle" 
+            [@fade]="titleState">{{'INTRO.TITLE_F' | translate}}</h1>
+        <ng-template #defaultTitle>
+          <h1 [@fade]="titleState">{{'INTRO.TITLE' | translate}}</h1>
+        </ng-template>
         <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
       </ion-col>
     </ion-row>

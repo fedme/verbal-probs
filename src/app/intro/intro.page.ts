@@ -3,6 +3,7 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 import { NavController, AlertController } from '@ionic/angular';
 import { VprobsService } from '../services/vprobs/vprobs.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AppService } from '../services/common/app.service';
 
 @Component({
   selector: 'app-intro',
@@ -38,10 +39,10 @@ export class IntroPage implements OnInit {
     public vprobs: VprobsService,
     private navCtrl: NavController,
     private alertCtrl: AlertController,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private app: AppService
   ) {
-    this.vprobs.setupExperiment(); // TODO: REMOVE!
-
+    // this.vprobs.setupExperiment(); // TODO: REMOVE!
   }
 
   ngOnInit() {

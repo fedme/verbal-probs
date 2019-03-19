@@ -23,4 +23,4 @@ export class Participant {
         return this.id === obj.id;
     }
 
-}  
+}
