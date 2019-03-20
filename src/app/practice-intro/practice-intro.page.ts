@@ -37,7 +37,7 @@ export class PracticeIntroPage implements OnInit {
     private navCtrl: NavController,
     private alertCtrl: AlertController,
     private translate: TranslateService,
-    private app: AppService
+    public app: AppService
   ) {
     // this.vprobs.setupExperiment(); // TODO: REMOVE!
   }

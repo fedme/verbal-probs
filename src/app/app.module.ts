@@ -10,7 +10,7 @@ import { Pro } from '@ionic/pro';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 import { Device } from '@ionic-native/device/ngx';
 import { File } from '@ionic-native/file/ngx';
@@ -26,18 +26,18 @@ import { environment } from '../environments/environment';
 // Ionic Pro setup
 Pro.init(AppInfo.id, {
   appVersion: AppInfo.version
-})
+});
 
 // Ionic Storage config
 const storageConfig = {
   name: AppInfo.id,
   driverOrder: ['sqlite', 'indexeddb', 'websql']
-}
+};
 
 // Ionic Monitoring: custom error handler
 @Injectable()
 export class MyErrorHandler extends ErrorHandler {
-  constructor() { super() }
+  constructor() { super(); }
   handleError(err: any): void {
     Pro.monitoring.handleNewError(err);
     console.log(err);
@@ -54,7 +54,7 @@ const translateConfig = {
     useFactory: (createTranslateLoader),
     deps: [HttpClient]
   }
-}
+};
 
 
 @NgModule({
