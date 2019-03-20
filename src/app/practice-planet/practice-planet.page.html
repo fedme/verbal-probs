@@ -1,0 +1,77 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen>
+
+  <ion-grid fixed size-md>
+
+    <ion-row class="monsters" justify-content-center align-items-center>
+
+      <ion-col size="2"></ion-col>
+
+      <ion-col size="3" text-center>
+        <p [@fade]="monsterState" class="feature-label">{{featureLabelLeft}}</p>
+        <img [@fade]="monsterState" src="assets/img/monster_pairs/{{featureLeft}}.png" alt="monster">
+      </ion-col>
+
+      <ion-col size="2" text-center>
+        <img [@fade]="planetState" src="assets/img/planets/{{vprobs.practiceBattery.currentPlanet.planet}}.png" alt="planet">
+      </ion-col>
+
+      <ion-col size="3" text-center>
+        <p [@fade]="monsterState" class="feature-label">{{featureLabelRight}}</p>
+        <img [@fade]="monsterState" src="assets/img/monster_pairs/{{featureRight}}.png" alt="monster">
+      </ion-col>
+
+      <ion-col size="2"></ion-col>
+
+    </ion-row>
+
+    <ion-row class="text">
+      <ion-col text-center>
+        <p [@fade]="textState">{{text1}}<br>{{text2}}</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="slider" align-items-center>
+
+      <ion-col size="2" class="slider-text"><span [@fade]="sliderState">{{sliderTextLeft}}</span></ion-col>
+
+      <ion-col size="8" text-center>
+        <ion-range [@fade]="sliderState" min="0" max="100" step="1" [(ngModel)]="sliderVal" (ionChange)="sliderChanged($event)"></ion-range>
+      </ion-col>
+
+      <ion-col size="2" class="slider-text"><span [@fade]="sliderState">{{sliderTextRight}}</span></ion-col>
+
+    </ion-row>
+
+    <ion-row class="bottom" align-items-end>
+
+      <ion-col size="1"></ion-col>
+
+      <ion-col size="2">
+        <img [@fade]="rocketState" src="assets/img/rocket.png" alt="rocket">
+      </ion-col>
+
+      <ion-col size="1"></ion-col>
+
+      <ion-col size="6" text-center>
+       <div [@fade]="robotState" class="speech-bubble">
+         <p [@fade]="robotTextState" [innerHTML]="robotText" class="robot-text"></p>
+       </div>
+      </ion-col>
+
+      <ion-col size="2">
+        <img [@fade]="robotState" src="assets/img/robot.png" alt="robot" (click)="robotTouched()" class="robot-img">
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

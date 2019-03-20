@@ -3,11 +3,13 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 import { NavController, AlertController } from '@ionic/angular';
 import { VprobsService } from '../services/vprobs/vprobs.service';
 import { TranslateService } from '@ngx-translate/core';
+import { AppService } from '../services/common/app.service';
+import { DataService } from '../services/common/data.service';
 
 @Component({
-  selector: 'app-planet-intro',
-  templateUrl: './planet-intro.page.html',
-  styleUrls: ['./planet-intro.page.scss'],
+  selector: 'app-exp-notes',
+  templateUrl: './exp-notes.page.html',
+  styleUrls: ['./exp-notes.page.scss'],
   animations: [
     trigger('fade', [
       state('true', style({
@@ -20,20 +22,17 @@ import { TranslateService } from '@ngx-translate/core';
     ])
   ]
 })
-export class PlanetIntroPage implements OnInit {
+export class ExpNotesPage implements OnInit {
 
-  slideNumber = 0;
-  lastSlideNumber = 3;
-
-  planetState = false;
-  titleState = false;
-  rocketState = false;
+  contentState = false;
 
   constructor(
     public vprobs: VprobsService,
     private navCtrl: NavController,
     private alertCtrl: AlertController,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private app: AppService,
+    private data: DataService
   ) {
     // this.vprobs.setupExperiment(); // TODO: REMOVE!
   }
@@ -42,24 +41,23 @@ export class PlanetIntroPage implements OnInit {
     this.slide0();
   }
 
-  async next() {
-    this.hideAll();
-    await this.sleep(1100);
-    this.navCtrl.navigateRoot('/planet');
-  }
-
   async slide0() {
     await this.sleep(500);
-    this.planetState = true;
-    this.titleState = true;
-    await this.sleep(1000);
-    this.rocketState = true;
+    this.contentState = true;
+  }
+
+  async next() {
+
+    // Save experiment data
+    this.data.save();
+
+    this.hideAll();
+    await this.sleep(1100);
+    this.navCtrl.navigateRoot('/end');
   }
 
   hideAll() {
-    this.planetState = false;
-    this.titleState = false;
-    this.rocketState = false;
+    this.contentState = false;
   }
 
   sleep(ms: number) {

@@ -4,8 +4,7 @@ import { Utils } from '../common/utils';
 
 export const PRACTICE_FREQ_TERMS: string[] = [
     'nie',
-    'immer',
-    '??'
+    'immer' // TODO: third one missing
 ];
 
 export const TEST_FREQ_TERMS: string[] = [
@@ -19,8 +18,7 @@ export const TEST_FREQ_TERMS: string[] = [
 
 export const PRACTICE_PROB_TERMS: string[] = [
     'unmöglich',
-    'sicher',
-    '???'
+    'sicher' // TODO: third one missing
 ];
 
 export const TEST_PROB_TERMS: string[] = [
@@ -182,296 +180,73 @@ export class TestBattery {
 }
 
 
+export class PracticeBattery {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TODO: Remove HALO stuff!!!
-
-export enum Instructor {
-    Blue = 'blue',
-    Yellow = 'yellow'
-}
-
-export enum Skill {
-    Fish = 'fish',
-    QA = 'qa'
-}
-
-export enum Confidence {
-    Confident = 'confident',
-    NonConfident = 'notconfident'
-}
-
-export enum ConfidenceLevel {
-    VerySure = 'verysure',
-    DontKnow = 'dontknow',
-    NotSure = 'notsure'
-}
-
-export enum Environment {
-    Animals = 'animals',
-    Fish = 'fish',
-    Houses = 'houses'
-}
-
-export enum Art {
-    Animals = 'animals',
-    BetterAtSchool = 'betteratschool',
-    Icecream = 'icecream',
-    TreasureHunt = 'treasurehunt',
-    Plane = 'plane',
-    Riddle = 'riddle'
-}
-
-export class MemoryCheck {
-    possibleChoices: Instructor[];
-    choice: Instructor;
-
-    constructor() {
-        this.possibleChoices = [
-            Instructor.Blue,
-            Instructor.Yellow
-        ];
-        Utils.shuffleArray(this.possibleChoices);
+    constructor(planets: PlanetRound[]) {
+        this.planets = planets;
+        this.planetIndex = 0;
     }
 
-    choose(instructor: Instructor) {
-        this.choice = instructor;
+    public get currentPlanet(): PlanetRound {
+        if (this.planetIndex >= this.planets.length) { return null; }
+        return this.planets[this.planetIndex];
     }
+    planets: PlanetRound[];
+    planetIndex: number;
 
-    chooseByIndex(i: number) {
-        if (i < this.possibleChoices.length) {
-            this.choose(this.possibleChoices[i]);
+    public static getDefault(freqFirst: boolean = true): TestBattery {
+
+        // Get terms, features and planets
+        const freq_terms = PRACTICE_FREQ_TERMS.slice();
+        const prob_terms = PRACTICE_PROB_TERMS.slice();
+
+        let terms = freq_terms.concat(prob_terms);
+        if (!freqFirst) {
+            terms = prob_terms.concat(freq_terms);
         }
-    }
-}
 
-export class MemoryCheckBattery {
+        const features = FEATURES.slice();
+        const planets = PLANETS.slice();
 
-    constructor(checks: MemoryCheck[]) {
-        this.checks = checks;
-        this.checkIndex = 0;
-    }
+        // Randomize their order
+        Utils.shuffleArray(features);
+        Utils.shuffleArray(planets);
 
-    public get currentCheck(): MemoryCheck {
-        if (this.checkIndex >= this.checks.length) { return null; }
-        return this.checks[this.checkIndex];
-    }
-
-    public get visualIndex(): number {
-        return this.checkIndex + 1;
-    }
-    checks: MemoryCheck[];
-    private checkIndex: number;
-
-    public static getDefault(): MemoryCheckBattery {
-        return new MemoryCheckBattery([
-            new MemoryCheck(),
-            new MemoryCheck(),
-            new MemoryCheck(),
-            new MemoryCheck(),
-        ]);
-    }
-
-    public isLastCheck(): boolean {
-        return this.checkIndex >= this.checks.length - 1;
-    }
-
-    public nextCheck() {
-        this.checkIndex++;
-    }
-}
-
-export class SecondTestRound {
-    picture: Art;
-    choice: Instructor;
-
-    possibleChoices: Instructor[];
-
-
-    constructor(picture: Art) {
-        this.picture = picture;
-        this.possibleChoices = [Instructor.Blue, Instructor.Yellow];
-        Utils.shuffleArray(this.possibleChoices);
-    }
-
-    chooseInstructor(i: number) {
-        if (i < this.possibleChoices.length) {
-            this.choice = this.possibleChoices[i];
+        // Create planet rounds
+        const rounds: PlanetRound[] = [];
+        for (let i = 0; i < terms.length; i++) {
+            rounds.push(
+                new PlanetRound(i + 1, features[i], terms[i], planets[i])
+            );
         }
-    }
-}
 
-export class SecondTestBattery {
-
-    constructor(tests: SecondTestRound[]) {
-        this.tests = tests;
-        this.testIndex = 0;
-    }
-
-    public get currentTest(): SecondTestRound {
-        if (this.testIndex >= this.tests.length) { return null; }
-        return this.tests[this.testIndex];
-    }
-    tests: SecondTestRound[];
-    private testIndex: number;
-
-    public static getDefault(): SecondTestBattery {
-        const battery = new SecondTestBattery([
-            new SecondTestRound(Art.Animals),
-            new SecondTestRound(Art.BetterAtSchool),
-            new SecondTestRound(Art.Icecream),
-            new SecondTestRound(Art.TreasureHunt),
-            new SecondTestRound(Art.Plane),
-            new SecondTestRound(Art.Riddle)
-        ]);
-        Utils.shuffleArray(battery.tests);
+        const battery = new PracticeBattery(rounds);
+        Utils.shuffleArray(battery.planets);
         return battery;
     }
 
-    public isLastTest(): boolean {
-        return this.testIndex >= this.tests.length - 1;
+    public isLastPlanet(): boolean {
+        return this.planetIndex >= this.planets.length - 1;
     }
 
-    public nextTest() {
-        this.testIndex++;
-    }
-}
-
-export class ExplanationBattery {
-
-    constructor(exps: Environment[]) {
-        this.explanations = exps;
-        this.explanationIndex = 0;
-    }
-
-    public get currentExplanation(): string {
-        if (this.explanationIndex >= this.explanations.length) { return null; }
-        return this.explanations[this.explanationIndex];
-    }
-    explanations: Environment[];
-    private explanationIndex: number;
-
-    public static getDefault(): ExplanationBattery {
-        const battery = new ExplanationBattery([
-            Environment.Animals,
-            Environment.Fish,
-            Environment.Houses
-        ]);
-        return battery;
-    }
-
-    public isLastExplanation(): boolean {
-        return this.explanationIndex >= this.explanations.length - 1;
-    }
-
-    public nextExplanation() {
-        this.explanationIndex++;
+    public nextPlanet() {
+        this.planetIndex++;
     }
 }
 
-export class Video {
-    id: number;
-    instructor: Instructor;
-    skill: Skill;
-
-    constructor(id: number, instructor: Instructor, skill: Skill) {
-        this.id = id;
-        this.instructor = instructor;
-        this.skill = skill;
-    }
-
-    get videoFile(): string {
-        return `assets/videos/Edit_Video${this.id}_${this.instructor}_${this.skill.toUpperCase()}EXPERT.mp4`;
-    }
-}
 
 export class Condition {
 
-    constructor(id: string, videos: Video[] = []) {
-        this.id = id;
-        this.videos = videos;
-        this.videoIndex = 0;
-    }
-
-    public get currentVideo(): Video {
-        if (this.videoIndex >= this.videos.length) { return null; }
-        return this.videos[this.videoIndex];
-    }
     id: string;
-    videos: Video[] = [];
-    private videoIndex: number;
+
+    constructor(id: string) {
+        this.id = id;
+    }
 
     static getAll(): Condition[] {
         return [
-            new Condition(
-                'blue-fish',
-                [
-                    new Video(1, Instructor.Blue, Skill.Fish),
-                    new Video(1, Instructor.Yellow, Skill.QA),
-                    new Video(2, Instructor.Blue, Skill.Fish),
-                    new Video(2, Instructor.Yellow, Skill.QA)
-                ]
-            ),
-            new Condition(
-                'blue-qa',
-                [
-                    new Video(1, Instructor.Blue, Skill.QA),
-                    new Video(1, Instructor.Yellow, Skill.Fish),
-                    new Video(2, Instructor.Blue, Skill.QA),
-                    new Video(2, Instructor.Yellow, Skill.Fish)
-                ]
-            ),
-            new Condition(
-                'yellow-fish',
-                [
-                    new Video(1, Instructor.Yellow, Skill.Fish),
-                    new Video(1, Instructor.Blue, Skill.QA),
-                    new Video(2, Instructor.Yellow, Skill.Fish),
-                    new Video(2, Instructor.Blue, Skill.QA)
-                ]
-            ),
-            new Condition(
-                'yellow-qa',
-                [
-                    new Video(1, Instructor.Yellow, Skill.QA),
-                    new Video(1, Instructor.Blue, Skill.Fish),
-                    new Video(2, Instructor.Yellow, Skill.QA),
-                    new Video(2, Instructor.Blue, Skill.Fish)
-                ]
-            )
+            new Condition('freq-first'),
+            new Condition('prob-first')
         ];
     }
-
-    public isLastVideo(): boolean {
-        return this.videoIndex >= this.videos.length - 1;
-    }
-
-    public nextVideo() {
-        this.videoIndex++;
-    }
-
 }
-

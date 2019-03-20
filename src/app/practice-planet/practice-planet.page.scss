@@ -1,0 +1,91 @@
+ion-toolbar {
+    --background: transparent;
+}
+
+ion-content {
+    --background: url("/assets/img/bg.jpg") 0 0/100% 100% no-repeat;
+}
+
+
+
+ion-content {
+  background: none;
+  background-color: transparent !important;
+}
+
+ion-grid {
+  //margin-top: 20px;
+}
+
+ion-row {
+  //padding-top: 5px;
+}
+
+.robot-img {
+  cursor: pointer;
+}
+
+h1 {
+  padding-top: 0.1em;
+  font-size: 2.7em;
+  color: white;
+}
+
+ion-row.monsters {
+  color: white !important;
+  padding: 0.1em 1.5em 0 1.5em;
+  font-size: 1.3em;
+
+  img {
+    max-height: 7em;
+  }
+}
+
+ion-row.slider {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  .slider-text {
+    color: white !important;
+    font-size: 1.2em;
+    text-align: center;
+  }
+}
+
+ion-range {
+  background: linear-gradient(90deg, #F6F0CF 2%, transparent 0%, transparent 49%, #F6F0CF 25%, #F6F0CF 51%, transparent 50%, transparent 98%, #F6F0CF 98%) !important;
+}
+
+
+ion-row.text {
+  color: white !important;
+  padding: 0.1em 1.5em 0 1.5em;
+  font-size: 1.3em;
+}
+
+
+.speech-bubble {
+  position: relative;
+  background: #ffffb7;
+  border-radius: .4em;
+  min-height: 9em;
+  padding: 0.8em;
+  margin: 3em;
+  p {
+      font-size: 1.5em;
+  }
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 1.688em solid transparent;
+  border-left-color: #ffffb7;
+  border-right: 0;
+  margin-top: -1.687em;
+  margin-right: -1.687em;
+}

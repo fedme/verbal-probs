@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen>
+
+  <ion-grid fixed size-md>
+
+      <ion-row>
+        <ion-col></ion-col>
+        <ion-col size="8" text-center>
+          <div [@fade]="contentState" class="content-wrapper">
+  
+            <h1>Experimenter Notes</h1>
+            <ion-textarea [(ngModel)]="vprobs.experimenterNotes" rows="8"></ion-textarea>
+          </div>
+        </ion-col>
+        <ion-col></ion-col>
+      </ion-row>
+  
+    </ion-grid>
+
+</ion-content>

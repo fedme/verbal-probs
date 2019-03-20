@@ -1,0 +1,76 @@
+ion-toolbar {
+    --background: transparent;
+}
+
+ion-content {
+    --background: url("/assets/img/bg.jpg") 0 0/100% 100% no-repeat;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: white;
+}
+
+.title-row {
+  padding-top: 7em;
+}
+
+p.outro-text {
+  color: white;
+  padding: 0.1em 2em 0 2em;
+  margin: 18px;
+  font-size: 2em;
+}
+
+.rocket-img {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+ion-grid {
+  //margin-top: 20px;
+}
+
+ion-row {
+  //padding-top: 10px;
+}
+
+ion-row.text {
+  min-height: 200px;
+  max-height: 200px;
+}
+
+ion-row.planets {
+  min-height: 250px;
+  max-height: 250px;
+
+  img {
+    max-height: 240px;
+  }
+}
+
+.speech-bubble {
+  position: relative;
+  background: #ffffb7;
+  border-radius: .4em;
+  min-height: 9em;
+  padding: 1em;
+  margin: 3em;
+  p {
+      font-size: 2em;
+  }
+}
+
+.speech-bubble:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 1.688em solid transparent;
+  border-left-color: #ffffb7;
+  border-right: 0;
+  margin-top: -1.687em;
+  margin-right: -1.687em;
+}

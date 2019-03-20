@@ -14,7 +14,7 @@
 
     <ion-row class="text">
       <ion-col text-center>
-        <h1 *ngIf="app.participant.gender == 'female'; else defaultTitle" 
+        <h1 *ngIf="app.participant != null && app.participant.gender == 'female'; else defaultTitle" 
             [@fade]="titleState">{{'INTRO.TITLE_F' | translate}}</h1>
         <ng-template #defaultTitle>
           <h1 [@fade]="titleState">{{'INTRO.TITLE' | translate}}</h1>

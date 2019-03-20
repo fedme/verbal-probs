@@ -5,9 +5,9 @@ import { VprobsService } from '../services/vprobs/vprobs.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-planet',
-  templateUrl: './planet.page.html',
-  styleUrls: ['./planet.page.scss'],
+  selector: 'app-practice-planet',
+  templateUrl: './practice-planet.page.html',
+  styleUrls: ['./practice-planet.page.scss'],
   animations: [
     trigger('fade', [
       state('true', style({
@@ -20,7 +20,7 @@ import { TranslateService } from '@ngx-translate/core';
     ])
   ]
 })
-export class PlanetPage implements OnInit {
+export class PracticePlanetPage implements OnInit {
 
   slideNumber = 0;
   lastSlideNumber = 3;
@@ -59,22 +59,38 @@ export class PlanetPage implements OnInit {
     // this.vprobs.setupExperiment(); // TODO: REMOVE!
   }
 
+  resetPage() {
+    this.slideNumber = 0;
+    this.lastSlideNumber = 3;
+    this.monsterState = false;
+    this.planetState = false;
+    this.rocketState = false;
+    this.robotState = false;
+    this.textState = false;
+    this.sliderState = false;
+    this.robotTextState = false;
+    this.sliderVal = 50;
+    this.sliderTouched = false;
+    this.mustTouchRobot = false;
+    this.ngOnInit();
+  }
+
   ngOnInit() {
     // Select LEFT arrangement of things
-    this.featureLeft = this.vprobs.testBattery.currentPlanet.feature + '_b';
-    this.featureLabelLeft = this.vprobs.testBattery.currentPlanet.feature_label_b;
-    this.sliderTextLeft = this.vprobs.testBattery.currentPlanet.slider_text_b;
-    this.vprobs.testBattery.currentPlanet.layoutLeft = 'b';
+    this.featureLeft = this.vprobs.practiceBattery.currentPlanet.feature + '_b';
+    this.featureLabelLeft = this.vprobs.practiceBattery.currentPlanet.feature_label_b;
+    this.sliderTextLeft = this.vprobs.practiceBattery.currentPlanet.slider_text_b;
+    this.vprobs.practiceBattery.currentPlanet.layoutLeft = 'b';
 
     // Select RIGHT arrangement of things
-    this.featureRight = this.vprobs.testBattery.currentPlanet.feature + '_a';
-    this.featureLabelRight = this.vprobs.testBattery.currentPlanet.feature_label_a;
-    this.sliderTextRight = this.vprobs.testBattery.currentPlanet.slider_text_a;
-    this.vprobs.testBattery.currentPlanet.layoutRight = 'a';
+    this.featureRight = this.vprobs.practiceBattery.currentPlanet.feature + '_a';
+    this.featureLabelRight = this.vprobs.practiceBattery.currentPlanet.feature_label_a;
+    this.sliderTextRight = this.vprobs.practiceBattery.currentPlanet.slider_text_a;
+    this.vprobs.practiceBattery.currentPlanet.layoutRight = 'a';
 
     // Select appropiate ordered text
-    this.introText = this.vprobs.testBattery.currentPlanet.intro_text_b_a;
-    this.questionText = this.vprobs.testBattery.currentPlanet.question_text_a;
+    this.introText = this.vprobs.practiceBattery.currentPlanet.intro_text_b_a;
+    this.questionText = this.vprobs.practiceBattery.currentPlanet.question_text_a;
 
     this.slide0();
   }
@@ -114,17 +130,18 @@ export class PlanetPage implements OnInit {
       }
 
       // Save slider val
-      this.vprobs.testBattery.currentPlanet.slider_val = this.sliderVal;
+      this.vprobs.practiceBattery.currentPlanet.slider_val = this.sliderVal;
 
-      if (this.vprobs.testBattery.isLastPlanet()) {
+      if (this.vprobs.practiceBattery.isLastPlanet()) {
         this.hideAll();
         await this.sleep(600);
-        this.navCtrl.navigateRoot('/exp-notes');
+        this.navCtrl.navigateRoot('/practice-outro');
       } else {
         this.hideAll();
         await this.sleep(600);
-        this.vprobs.testBattery.nextPlanet();
-        this.navCtrl.navigateRoot('/planet-intro');
+        this.vprobs.practiceBattery.nextPlanet();
+        // this.navCtrl.navigateRoot('/practice-planet');
+        this.resetPage();
       }
 
     }
@@ -135,7 +152,7 @@ export class PlanetPage implements OnInit {
   }
 
   async slide0() {
-    this.text1 = await this.translate.get('PLANET.INTRO_STATIC').toPromise();
+    this.text1 = await this.translate.get('PRACTICE_PLANET.INTRO_STATIC').toPromise();
     this.text2 = this.introText;
     this.sliderVal = 50;
 
@@ -179,7 +196,7 @@ export class PlanetPage implements OnInit {
 
     this.robotTextState = false;
     await this.sleep(600);
-    this.robotText = this.vprobs.testBattery.currentPlanet.robot_text;
+    this.robotText = this.vprobs.practiceBattery.currentPlanet.robot_text;
     await this.sleep(100);
     this.robotTextState = true;
   }
@@ -188,7 +205,7 @@ export class PlanetPage implements OnInit {
     this.textState = false;
     await this.sleep(600);
 
-    if (this.vprobs.testBattery.currentPlanet.term_type === 'probability') {
+    if (this.vprobs.practiceBattery.currentPlanet.term_type === 'probability') {
       this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_PROB').toPromise();
     } else {
       this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_FREQ').toPromise();

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IExperiment } from '../common/experiment.interface';
 // tslint:disable-next-line:max-line-length
-import { Condition, TestBattery, PlanetRound, MemoryCheck, ExplanationBattery, MemoryCheckBattery, SecondTestBattery } from './models';
+import { Condition, TestBattery, PracticeBattery} from './models';
 import { Utils } from '../common/utils';
 
 @Injectable({
@@ -10,7 +10,9 @@ import { Utils } from '../common/utils';
 export class VprobsService implements IExperiment {
 
   condition: Condition;
+  practiceBattery: PracticeBattery;
   testBattery: TestBattery;
+  experimenterNotes: string;
 
   constructor() { }
 
@@ -18,14 +20,20 @@ export class VprobsService implements IExperiment {
     console.log('[VProbsService] setupExperiment()');
     this.resetData();
     this.chooseCondition();
+    this.setupPractice();
     this.setupTests();
   }
 
   public resetData() {
     this.condition = null;
+    this.practiceBattery = null;
     this.testBattery = null;
+    this.experimenterNotes = null;
   }
 
+  setupPractice() {
+    this.practiceBattery = PracticeBattery.getDefault(this.condition.id === 'freq-first');
+  }
 
   setupTests() {
     this.testBattery = TestBattery.getDefault();
@@ -63,7 +71,7 @@ export class VprobsService implements IExperiment {
 
   setInitialConditions(): number[] {
     // Save an array with 20 possible condition ids to local Storage
-    let ids = Array(5).fill(0).concat(Array(5).fill(1)).concat(Array(5).fill(2)).concat(Array(5).fill(3));
+    let ids = Array(5).fill(0).concat(Array(5).fill(1));
     ids = Utils.getShuffledCopy(ids);
     localStorage.setItem('isrc-vprobs-conds', JSON.stringify(ids));
     return ids;
@@ -71,10 +79,11 @@ export class VprobsService implements IExperiment {
 
   public getExperimentData() {
 
-    // TODO: save data here
     const data = {
       condition: this.condition,
-      test: this.testBattery
+      practice: this.practiceBattery,
+      test: this.testBattery,
+      notes: this.experimenterNotes
     };
 
     return data;

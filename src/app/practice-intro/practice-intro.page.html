@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen>
+  <ion-grid fixed size-md>
+
+    <ion-row class="text">
+      <ion-col text-center class="title-row">
+        <h1 *ngIf="app.participant != null && app.participant.gender == 'female'; else defaultTitle" 
+            [@fade]="titleState">{{'PRACTICE_INTRO.TITLE_F' | translate}}</h1>
+        <ng-template #defaultTitle>
+          <h1 [@fade]="titleState">{{'PRACTICE_INTRO.TITLE' | translate}}</h1>
+        </ng-template>
+        <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

@@ -26,6 +26,18 @@
     "ROBOT_TEXT": "Hallo, ich bin Robbie!",
     "NEXT": "Weiter"
   },
+  "PRACTICE_INTRO": {
+    "TITLE": "Hallo Forscher, lass uns üben!",
+    "TITLE_F": "Hallo Forscherin, lass uns üben!"
+  },
+  "PRACTICE_PLANET": {
+    "INTRO_STATIC": "Es könnte sein, dass es auf diesem Planeten zwei verschiedene Arten von Monstern gibt:"
+  },
+  "PRACTICE_OUTRO": {
+    "TITLE": "Gut gemacht Entdecker!",
+    "TITLE_F": "Gut gemacht Entdeckerin!",
+    "TEXT": "Auf geht’s ins Weltall!"
+  },
   "PLANET": {
     "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
     "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
