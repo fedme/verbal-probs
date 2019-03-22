@@ -30,7 +30,7 @@ export class VprobsService implements IExperiment {
     this.resetData();
     this.chooseCondition();
     this.setupPracticeAndTest();
-    this.loadSounds();
+    //this.loadSounds();
   }
 
   public resetData() {
@@ -59,22 +59,22 @@ export class VprobsService implements IExperiment {
   }
 
   loadSounds() {
-    this.soundIntro = new Audio('assets/sounds/intro_sound.wav');
+    this.soundIntro = new Audio('assets/sounds/intro_sound.mp3');
     this.soundIntro.load();
 
-    this.soundMetallic = new Audio('assets/sounds/metallic_sound.wav');
+    this.soundMetallic = new Audio('assets/sounds/metallic_sound.mp3');
     this.soundMetallic.load();
 
-    this.soundClick = new Audio('assets/sounds/mouse-click.wav');
+    this.soundClick = new Audio('assets/sounds/mouse-click.mp3');
     this.soundClick.load();
 
-    this.soundPop = new Audio('assets/sounds/pop_sound.wav');
+    this.soundPop = new Audio('assets/sounds/pop_sound.mp3');
     this.soundPop.load();
 
-    this.soundSpaceship = new Audio('assets/sounds/spaceship_sound.wav');
+    this.soundSpaceship = new Audio('assets/sounds/spaceship_sound.mp3');
     this.soundSpaceship.load();
 
-    this.soundWizard = new Audio('assets/sounds/wizard_sound.wav');
+    this.soundWizard = new Audio('assets/sounds/wizard_sound.mp3');
     this.soundWizard.load();
   }
 

@@ -51,7 +51,7 @@ export class PracticeIntroPage implements OnInit {
     await this.sleep(600);
     this.navCtrl.navigateRoot('/practice-planet');
 
-    this.vprobs.soundClick.play();
+    // this.vprobs.soundClick.play();
   }
 
   async slide0() {

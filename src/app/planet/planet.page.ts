@@ -133,7 +133,7 @@ export class PlanetPage implements OnInit {
         this['slide' + this.slideNumber]();
     }
 
-    this.vprobs.soundClick.play();
+    // this.vprobs.soundClick.play();
   }
 
   async slide0() {
@@ -148,10 +148,27 @@ export class PlanetPage implements OnInit {
     await this.sleep(1000);
     this.monsterState = true;
     this.textState = true;
-    this.vprobs.soundWizard.play();
+    // this.vprobs.soundWizard.play();
   }
 
   async slide1() {
+
+    // Text changes
+    this.textState = false;
+    await this.sleep(600);
+
+    if (this.vprobs.testBattery.currentPlanet.term_type === 'probability') {
+      this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_PROB').toPromise();
+    } else {
+      this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_FREQ').toPromise();
+    }
+
+    this.text2 = this.questionText;
+    await this.sleep(100);
+    this.textState = true;
+
+
+    // Robot appears
 
     this.robotText = await this.translate.get('PLANET.ROBOT_CLICK_ME').toPromise();
     this.mustTouchRobot = true;
@@ -160,7 +177,7 @@ export class PlanetPage implements OnInit {
     this.robotTextState = true;
     this.robotState = true;
 
-    this.vprobs.soundPop.play();
+    // this.vprobs.soundPop.play();
 
   }
 
@@ -176,7 +193,7 @@ export class PlanetPage implements OnInit {
       this.slide3();
     }
 
-    this.vprobs.soundMetallic.play();
+    // this.vprobs.soundMetallic.play();
 
   }
 
@@ -190,26 +207,15 @@ export class PlanetPage implements OnInit {
     await this.sleep(100);
     this.robotTextState = true;
 
-    this.vprobs.soundPop.play();
+    // this.vprobs.soundPop.play();
   }
 
   async slide3() {
-    this.textState = false;
-    await this.sleep(600);
-
-    if (this.vprobs.testBattery.currentPlanet.term_type === 'probability') {
-      this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_PROB').toPromise();
-    } else {
-      this.text1 = await this.translate.get('PLANET.QUESTION_STATIC_FREQ').toPromise();
-    }
-
-    this.text2 = this.questionText;
-    await this.sleep(100);
-    this.textState = true;
+    
 
     this.sliderState = true;
 
-    this.vprobs.soundWizard.play();
+    // this.vprobs.soundWizard.play();
   }
 
   hideAll() {

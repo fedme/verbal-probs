@@ -62,7 +62,7 @@ export class IntroPage implements OnInit {
         this['slide' + this.slideNumber]();
     }
 
-    this.vprobs.soundClick.play();
+    // this.vprobs.soundClick.play();
 
   }
 
@@ -74,7 +74,7 @@ export class IntroPage implements OnInit {
     this.titleState = true;
     await this.sleep(1000);
     this.rocketState = true;
-    this.vprobs.soundIntro.play();
+    // this.vprobs.soundIntro.play();
   }
 
   async slide1() {
