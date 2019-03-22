@@ -47,6 +47,8 @@ export class PlanetIntroPage implements OnInit {
     this.hideAll();
     await this.sleep(1100);
     this.navCtrl.navigateRoot('/planet');
+
+    this.vprobs.soundClick.play();
   }
 
   async slide0() {
@@ -56,6 +58,8 @@ export class PlanetIntroPage implements OnInit {
     this.progressState = true;
     await this.sleep(1000);
     this.rocketState = true;
+
+    this.vprobs.soundSpaceship.play();
   }
 
   hideAll() {

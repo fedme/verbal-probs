@@ -57,6 +57,8 @@ export class PracticeOutroPage implements OnInit {
         this['slide' + this.slideNumber]();
     }
 
+    this.vprobs.soundClick.play();
+
   }
 
   async slide0() {

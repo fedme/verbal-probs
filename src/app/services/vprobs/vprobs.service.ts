@@ -3,6 +3,7 @@ import { IExperiment } from '../common/experiment.interface';
 // tslint:disable-next-line:max-line-length
 import { Condition, TestBattery, PracticeBattery, FEATURES, PLANETS, N_PRACTICE, N_TEST} from './models';
 import { Utils } from '../common/utils';
+import { SourceNode } from 'source-list-map';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,14 @@ export class VprobsService implements IExperiment {
   testBattery: TestBattery;
   experimenterNotes: string;
 
+  // Sounds
+  soundIntro: HTMLAudioElement;
+  soundMetallic: HTMLAudioElement;
+  soundClick: HTMLAudioElement;
+  soundPop: HTMLAudioElement;
+  soundSpaceship: HTMLAudioElement;
+  soundWizard: HTMLAudioElement;
+
   constructor() { }
 
   public setupExperiment(): void {
@@ -21,6 +30,7 @@ export class VprobsService implements IExperiment {
     this.resetData();
     this.chooseCondition();
     this.setupPracticeAndTest();
+    this.loadSounds();
   }
 
   public resetData() {
@@ -46,6 +56,26 @@ export class VprobsService implements IExperiment {
       features.slice(N_PRACTICE),
       planets.slice(N_PRACTICE)
     );
+  }
+
+  loadSounds() {
+    this.soundIntro = new Audio('assets/sounds/intro_sound.wav');
+    this.soundIntro.load();
+
+    this.soundMetallic = new Audio('assets/sounds/metallic_sound.wav');
+    this.soundMetallic.load();
+
+    this.soundClick = new Audio('assets/sounds/mouse-click.wav');
+    this.soundClick.load();
+
+    this.soundPop = new Audio('assets/sounds/pop_sound.wav');
+    this.soundPop.load();
+
+    this.soundSpaceship = new Audio('assets/sounds/spaceship_sound.wav');
+    this.soundSpaceship.load();
+
+    this.soundWizard = new Audio('assets/sounds/wizard_sound.wav');
+    this.soundWizard.load();
   }
 
   chooseCondition() {

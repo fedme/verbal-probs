@@ -97,6 +97,7 @@ export class PracticePlanetPage implements OnInit {
 
   sliderChanged(evt) {
     this.sliderTouched = true;
+    //this.vprobs.soundMetallic.play();
   }
 
   async next() {
@@ -149,6 +150,8 @@ export class PracticePlanetPage implements OnInit {
     if (typeof this['slide' + this.slideNumber] === 'function') {
         this['slide' + this.slideNumber]();
     }
+
+    this.vprobs.soundClick.play();
   }
 
   async slide0() {
@@ -163,6 +166,7 @@ export class PracticePlanetPage implements OnInit {
     await this.sleep(1000);
     this.monsterState = true;
     this.textState = true;
+    this.vprobs.soundWizard.play();
   }
 
   async slide1() {
@@ -173,6 +177,8 @@ export class PracticePlanetPage implements OnInit {
 
     this.robotTextState = true;
     this.robotState = true;
+
+    this.vprobs.soundPop.play();
 
   }
 
@@ -188,6 +194,8 @@ export class PracticePlanetPage implements OnInit {
       this.slide3();
     }
 
+    this.vprobs.soundMetallic.play();
+
   }
 
   async slide2() {
@@ -199,6 +207,8 @@ export class PracticePlanetPage implements OnInit {
     this.robotText = this.vprobs.practiceBattery.currentPlanet.robot_text;
     await this.sleep(100);
     this.robotTextState = true;
+
+    this.vprobs.soundPop.play();
   }
 
   async slide3() {
@@ -216,6 +226,8 @@ export class PracticePlanetPage implements OnInit {
     this.textState = true;
 
     this.sliderState = true;
+
+    this.vprobs.soundWizard.play();
   }
 
   hideAll() {
