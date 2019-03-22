@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title></ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+      <ion-button color="secondary" (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -27,7 +27,7 @@
       <ion-col size="3"></ion-col>
     </ion-row>
 
-    <ion-row justify-content-center align-items-center class="planets-progress">
+    <ion-row justify-content-center align-items-center class="planets-progress" [@fade]="progressState">
       <ion-col *ngFor="let planet of vprobs.testBattery.planets; let i = index">
         <img [ngClass]="{'unknown': i > vprobs.testBattery.planetIndex}" src="assets/img/planets/{{planet.planet}}.png" alt="{{planet.planet}}">
       </ion-col>

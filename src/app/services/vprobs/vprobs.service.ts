@@ -71,7 +71,7 @@ export class VprobsService implements IExperiment {
 
   setInitialConditions(): number[] {
     // Save an array with 20 possible condition ids to local Storage
-    let ids = Array(5).fill(0).concat(Array(5).fill(1));
+    let ids = Array(10).fill(0).concat(Array(10).fill(1));
     ids = Utils.getShuffledCopy(ids);
     localStorage.setItem('isrc-vprobs-conds', JSON.stringify(ids));
     return ids;

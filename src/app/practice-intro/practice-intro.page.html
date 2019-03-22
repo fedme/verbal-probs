@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title></ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+      <ion-button color="secondary" (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -19,6 +19,16 @@
         </ng-template>
         <p [@fade]="textState" class="intro-text" [innerHTML]="text"></p>
       </ion-col>
+    </ion-row>
+
+    <ion-row class="bottom" align-items-end>
+
+        <ion-col size="10"></ion-col>
+
+        <ion-col size="2">
+          <img [@fade]="titleState" src="assets/img/robot.png" alt="robot" class="robot-img">
+        </ion-col>
+
     </ion-row>
 
   </ion-grid>

@@ -28,6 +28,7 @@ export class PlanetIntroPage implements OnInit {
   planetState = false;
   titleState = false;
   rocketState = false;
+  progressState = false;
 
   constructor(
     public vprobs: VprobsService,
@@ -52,6 +53,7 @@ export class PlanetIntroPage implements OnInit {
     await this.sleep(500);
     this.planetState = true;
     this.titleState = true;
+    this.progressState = true;
     await this.sleep(1000);
     this.rocketState = true;
   }
@@ -60,6 +62,7 @@ export class PlanetIntroPage implements OnInit {
     this.planetState = false;
     this.titleState = false;
     this.rocketState = false;
+    this.progressState = false;
   }
 
   sleep(ms: number) {

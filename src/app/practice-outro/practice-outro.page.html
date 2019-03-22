@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title></ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
+      <ion-button color="secondary" (click)="next()">{{'UI.NEXT' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,7 +17,7 @@
         <ng-template #defaultTitle>
           <h1 [@fade]="titleState">{{'PRACTICE_OUTRO.TITLE' | translate}}</h1>
         </ng-template>
-        <p [@fade]="textState" class="outro-text">{{'PRACTICE_OUTRO.TEXT' | translate}}</p>
+        <h1 [@fade]="textState" class="outro-text">{{'PRACTICE_OUTRO.TEXT' | translate}}</h1>
       </ion-col>
     </ion-row>
 

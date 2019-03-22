@@ -65,7 +65,7 @@ export class PracticeOutroPage implements OnInit {
 
   async slide1() {
     this.titleState = false;
-    await this.sleep(200);
+    await this.sleep(1000);
     this.textState = true;
   }
 

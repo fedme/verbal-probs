@@ -21,6 +21,19 @@ ion-row {
   //padding-top: 5px;
 }
 
+ion-range {
+  background: linear-gradient(90deg, #F6F0CF 2%, transparent 0%, transparent 49%, #F6F0CF 25%, #F6F0CF 51%, transparent 50%, transparent 98%, #F6F0CF 98%) !important;
+  --bar-background: #F6F0CF;
+  --bar-background-active: #F6F0CF;
+  //--bar-border-radius:
+  --bar-height: 1em;
+  --height: 2em;
+  --knob-background: red;
+  //--knob-border-radius: 	
+  //--knob-box-shadow: 	
+  --knob-size: 80px;
+}
+
 .robot-img {
   cursor: pointer;
 }
@@ -51,11 +64,6 @@ ion-row.slider {
     text-align: center;
   }
 }
-
-ion-range {
-  background: linear-gradient(90deg, #F6F0CF 2%, transparent 0%, transparent 49%, #F6F0CF 25%, #F6F0CF 51%, transparent 50%, transparent 98%, #F6F0CF 98%) !important;
-}
-
 
 ion-row.text {
   color: white !important;

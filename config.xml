@@ -82,15 +82,6 @@
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
     <plugin name="cordova-sqlite-storage" spec="2.4.0" />
-    <plugin name="cordova-plugin-ionic" spec="5.2.5">
-        <variable name="APP_ID" value="753d9079" />
-        <variable name="CHANNEL_NAME" value="Production" />
-        <variable name="UPDATE_METHOD" value="auto" />
-        <variable name="WARN_DEBUG" value="false" />
-        <variable name="UPDATE_API" value="https://api.ionicjs.com" />
-        <variable name="MAX_STORE" value="2" />
-        <variable name="MIN_BACKGROUND_DURATION" value="30" />
-    </plugin>
     <plugin name="cordova-plugin-fullscreen" spec="1.2.0" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <plugin name="cordova-plugin-file" spec="6.0.1" />

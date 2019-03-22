@@ -6,7 +6,6 @@ import { RouterModule, RouteReuseStrategy, Routes } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Pro } from '@ionic/pro';
 import { ErrorHandler, Injectable } from '@angular/core';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -22,27 +21,11 @@ import { AppInfo } from './app.info';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-
-// Ionic Pro setup
-Pro.init(AppInfo.id, {
-  appVersion: AppInfo.version
-});
-
 // Ionic Storage config
 const storageConfig = {
   name: AppInfo.id,
   driverOrder: ['sqlite', 'indexeddb', 'websql']
 };
-
-// Ionic Monitoring: custom error handler
-@Injectable()
-export class MyErrorHandler extends ErrorHandler {
-  constructor() { super(); }
-  handleError(err: any): void {
-    Pro.monitoring.handleNewError(err);
-    console.log(err);
-  }
-}
 
 // Ngx-Translate setup
 export function createTranslateLoader(http: HttpClient) {
@@ -74,7 +57,6 @@ const translateConfig = {
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: ErrorHandler, useClass: MyErrorHandler },
     AndroidFullScreen,
     Device,
     File
