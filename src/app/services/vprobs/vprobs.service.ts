@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { IExperiment } from '../common/experiment.interface';
 // tslint:disable-next-line:max-line-length
-import { Condition, TestBattery, PracticeBattery} from './models';
+import { Condition, TestBattery, PracticeBattery, FEATURES, PLANETS, N_PRACTICE, N_TEST} from './models';
 import { Utils } from '../common/utils';
 
 @Injectable({
@@ -20,8 +20,7 @@ export class VprobsService implements IExperiment {
     console.log('[VProbsService] setupExperiment()');
     this.resetData();
     this.chooseCondition();
-    this.setupPractice();
-    this.setupTests();
+    this.setupPracticeAndTest();
   }
 
   public resetData() {
@@ -31,12 +30,22 @@ export class VprobsService implements IExperiment {
     this.experimenterNotes = null;
   }
 
-  setupPractice() {
-    this.practiceBattery = PracticeBattery.getDefault(this.condition.id === 'freq-first');
-  }
+  setupPracticeAndTest() {
+    const features = FEATURES.slice();
+    const planets = PLANETS.slice();
+    Utils.shuffleArray(features);
+    Utils.shuffleArray(planets);
 
-  setupTests() {
-    this.testBattery = TestBattery.getDefault();
+    this.practiceBattery = PracticeBattery.getDefault(
+      this.condition.id === 'freq-first',
+      features.slice(0, N_PRACTICE),
+      planets.slice(0, N_PRACTICE),
+    );
+
+    this.testBattery = TestBattery.getDefault(
+      features.slice(N_PRACTICE),
+      planets.slice(N_PRACTICE)
+    );
   }
 
   chooseCondition() {

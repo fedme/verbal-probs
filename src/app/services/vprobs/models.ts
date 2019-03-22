@@ -2,9 +2,13 @@ import { FEATURE_MAPPING } from './feature_mapping';
 import { FEATURE_TERM_MAPPING } from './feature_term_mapping';
 import { Utils } from '../common/utils';
 
+export const N_PRACTICE: number = 6;
+export const N_TEST: number = 12;
+
 export const PRACTICE_FREQ_TERMS: string[] = [
     'nie',
-    'immer' // TODO: third one missing
+    'immer',
+    'haelfte'
 ];
 
 export const TEST_FREQ_TERMS: string[] = [
@@ -18,7 +22,8 @@ export const TEST_FREQ_TERMS: string[] = [
 
 export const PRACTICE_PROB_TERMS: string[] = [
     'unmöglich',
-    'sicher' // TODO: third one missing
+    'sicher',
+    'gleichwahrscheinlich'
 ];
 
 export const TEST_PROB_TERMS: string[] = [
@@ -46,10 +51,12 @@ export const FEATURES: string[] = [
     'stripe',
     'tail',
     'teeth',
-    'tentacles'
+    'tentacles',
+    'legs',
+    'mouth'
 ];
 
-export const PLANETS: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+export const PLANETS: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
 export class PlanetRound {
 
@@ -143,14 +150,14 @@ export class TestBattery {
     planets: PlanetRound[];
     planetIndex: number;
 
-    public static getDefault(): TestBattery {
+    public static getDefault(features: string[], planets: number[]): TestBattery {
 
         // Get terms, features and planets
         const freq_terms = TEST_FREQ_TERMS.slice();
         const prob_terms = TEST_PROB_TERMS.slice();
         const terms = freq_terms.concat(prob_terms);
-        const features = FEATURES.slice();
-        const planets = PLANETS.slice();
+        //const features = FEATURES.slice();
+        //const planets = PLANETS.slice();
 
         // Randomize their order
         Utils.shuffleArray(terms);
@@ -194,7 +201,7 @@ export class PracticeBattery {
     planets: PlanetRound[];
     planetIndex: number;
 
-    public static getDefault(freqFirst: boolean = true): TestBattery {
+    public static getDefault(freqFirst: boolean = true, features: string[], planets: number[]): PracticeBattery {
 
         // Get terms, features and planets
         const freq_terms = PRACTICE_FREQ_TERMS.slice();
@@ -205,8 +212,8 @@ export class PracticeBattery {
             terms = prob_terms.concat(freq_terms);
         }
 
-        const features = FEATURES.slice();
-        const planets = PLANETS.slice();
+        //const features = FEATURES.slice();
+        //const planets = PLANETS.slice();
 
         // Randomize their order
         Utils.shuffleArray(features);

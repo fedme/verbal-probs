@@ -116,5 +116,20 @@ export const FEATURE_MAPPING: {
 			"feature_label_b": "ohne Arme",
 			"intro_text_a_b": "Monster mit Armen und Monster ohne Arme.",
 			"intro_text_b_a": "Monster ohne Arme und Monster mit Armen."
+		},
+		{
+			"feature": "mouth",
+			"feature_label_a": "mit Mund",
+			"feature_label_b": "ohne Mund",
+			"intro_text_a_b": "Monster mit Mund und Monster ohne Mund.",
+			"intro_text_b_a": "Monster ohne Mund und Monster mit Mund."
+		},
+		{
+			"feature": "legs",
+			"feature_label_a": "mit Beinen",
+			"feature_label_b": "ohne Beine",
+			"intro_text_a_b": "Monster mit Beinen und Monster ohne Beine.",
+			"intro_text_b_a": "Monster ohne Beine und Monster mit Beinen."
 		}
+
 	]

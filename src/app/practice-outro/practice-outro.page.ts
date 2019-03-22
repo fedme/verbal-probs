@@ -28,6 +28,7 @@ export class PracticeOutroPage implements OnInit {
 
   titleState = false;
   textState = false;
+  robotState = false;
 
   constructor(
     public vprobs: VprobsService,
@@ -61,6 +62,7 @@ export class PracticeOutroPage implements OnInit {
   async slide0() {
     await this.sleep(500);
     this.titleState = true;
+    this.robotState = true;
   }
 
   async slide1() {
@@ -72,6 +74,7 @@ export class PracticeOutroPage implements OnInit {
   hideAll() {
     this.titleState = false;
     this.textState = false;
+    this.robotState = false;
   }
 
   sleep(ms: number) {
