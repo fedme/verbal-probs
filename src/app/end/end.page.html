@@ -1,26 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{'END.END' | translate}}</ion-title>
+    <ion-title></ion-title>
     <ion-buttons slot="end">
       <ion-button color="secondary" (click)="playAgain()">{{'END.PLAY_AGAIN' | translate}}</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding fullscreen>
   <ion-grid fixed size-md>
-    <ion-row justify-content-center align-items-start>
+    <ion-row justify-content-center align-items-center>
 
-      <ion-col size="5" size-m>
-
-        <ion-card mode="ios">
-          <ion-card-content text-center>
-
-            <ion-card-title>{{'END.WELL_DONE' | translate}}</ion-card-title>
-
-          </ion-card-content>
-        </ion-card>
-
+      <ion-col size="9" size-m style="text-align: center;">
+        <h1>{{'END.WELL_DONE' | translate}}</h1>
+        <h2>{{'END.WELL_DONE_2' | translate}}</h2>
       </ion-col>
     </ion-row>
   </ion-grid>

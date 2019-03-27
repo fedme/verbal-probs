@@ -118,11 +118,11 @@ export const FEATURE_MAPPING: {
 			"intro_text_b_a": "Monster ohne Arme und Monster mit Armen."
 		},
 		{
-			"feature": "mouth",
-			"feature_label_a": "mit Mund",
-			"feature_label_b": "ohne Mund",
-			"intro_text_a_b": "Monster mit Mund und Monster ohne Mund.",
-			"intro_text_b_a": "Monster ohne Mund und Monster mit Mund."
+			"feature": "toothgap",
+			"feature_label_a": "mit Zahnlücke",
+			"feature_label_b": "ohne Zahnlücke",
+			"intro_text_a_b": "Monster mit Zahnlücke und Monster ohne Zahnlücke.",
+			"intro_text_b_a": "Monster ohne Zahnlücke und Monster mit Zahnlücke."
 		},
 		{
 			"feature": "legs",

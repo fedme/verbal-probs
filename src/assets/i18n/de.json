@@ -13,7 +13,8 @@
   },
   "END": {
     "END": "Ende",
-    "WELL_DONE": "Gut Gemacht!",
+    "WELL_DONE": "Super gemacht!",
+    "WELL_DONE_2": "Du hast es geschafft!",
     "PLAY_AGAIN": "Wieder Spielen",
     "PLAY_AGAIN_CONFIRM": "Wieder Spielen (press again to confirm)"
   },
@@ -21,8 +22,8 @@
     "TITLE": "Herzlich willkommen, Forscher und Entdecker!",
     "TITLE_F": "Herzlich willkommen, Forscherin und Entdeckerin!",
     "TEXT_1": "Erkunde mit uns das Weltall, reise zu verschiedenen Planeten und entdecke die dort lebenden Monster! Begleitet wirst du dabei von deinem treuen Gefährten Robbie, dem Roboter!",
-    "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen Besuch freuen. Dein Freund Robbie weiß bereits ein paar Dinge über die verschiedenen Monster und ihre Eigenschaften.",
-    "TEXT_3": "Bei jedem Besuch wird Robbie dir etwas über die Eigenschaften der Monster verraten. Deine Aufgabe ist es, mit Robbies Hilfe die richtigen Antworten zu Fragen über die Monster zu finden!",
+    "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen  Besuch freuen. Dein Freund Robbie war bereits auf allen Planeten und kennt sich aus! Von ihm lernst du alles über die Monster und Planeten!",
+    "TEXT_3": " Deine Aufgabe ist es, auf den verschiedenen Planeten Fragen über die dort lebenden Monster richtig zu beantworten! Robbie hilft dir dabei mit seinem Wissen!",
     "ROBOT_TEXT": "Hallo, ich bin Robbie!",
     "NEXT": "Weiter"
   },

@@ -189,12 +189,15 @@ export class PracticePlanetPage implements OnInit {
 
     // Robbie appears
 
-    this.robotText = await this.translate.get('PLANET.ROBOT_CLICK_ME').toPromise();
-    this.mustTouchRobot = true;
-    await this.sleep(1000);
+    //this.robotText = await this.translate.get('PLANET.ROBOT_CLICK_ME').toPromise();
+    //this.mustTouchRobot = true;
+    //await this.sleep(1000);
 
-    this.robotTextState = true;
+    //this.robotTextState = true;
     this.robotState = true;
+
+    this.slideNumber++;
+    this.slide2();
 
     // this.vprobs.soundPop.play();
 

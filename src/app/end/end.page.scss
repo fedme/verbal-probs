@@ -1,0 +1,19 @@
+ion-toolbar {
+    --background: transparent;
+}
+
+ion-content {
+    --background: url("assets/img/bg.jpg") 0 0/100% 100% no-repeat;
+}
+
+h1 {
+    color: white;
+    font-size: 4em;
+    padding: 20px;
+}
+
+h2 {
+    color: white;
+    font-size: 3em;
+    //padding: 10px;
+}
