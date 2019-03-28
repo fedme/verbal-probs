@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: 'intro', loadChildren: './intro/intro.module#IntroPageModule' },
   { path: 'planet-intro', loadChildren: './planet-intro/planet-intro.module#PlanetIntroPageModule' },
   { path: 'planet', loadChildren: './planet/planet.module#PlanetPageModule' },
+  { path: 'well-done', loadChildren: './well-done/well-done.module#WellDonePageModule' },
   { path: 'exp-notes', loadChildren: './exp-notes/exp-notes.module#ExpNotesPageModule' },
   { path: 'end', loadChildren: './end/end.module#EndPageModule' }
 ];

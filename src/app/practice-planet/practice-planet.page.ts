@@ -23,7 +23,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PracticePlanetPage implements OnInit {
 
   slideNumber = 0;
-  lastSlideNumber = 3;
+  lastSlideNumber = 2;
 
   monsterState = false;
   planetState = false;
@@ -61,7 +61,7 @@ export class PracticePlanetPage implements OnInit {
 
   resetPage() {
     this.slideNumber = 0;
-    this.lastSlideNumber = 3;
+    this.lastSlideNumber = 2;
     this.monsterState = false;
     this.planetState = false;
     this.rocketState = false;
@@ -173,7 +173,6 @@ export class PracticePlanetPage implements OnInit {
 
 
     // Text changes
-
     this.textState = false;
     await this.sleep(600);
 
@@ -195,9 +194,14 @@ export class PracticePlanetPage implements OnInit {
 
     //this.robotTextState = true;
     this.robotState = true;
+    this.robotText = this.vprobs.practiceBattery.currentPlanet.robot_text;
+    await this.sleep(100);
+    this.robotTextState = true;
 
-    this.slideNumber++;
-    this.slide2();
+    this.mustTouchRobot = true;
+
+    // this.slideNumber++;
+    // this.slide2();
 
     // this.vprobs.soundPop.play();
 
@@ -205,36 +209,18 @@ export class PracticePlanetPage implements OnInit {
 
   robotTouched() {
 
-    if (this.slideNumber === 1) {
-      if (!this.mustTouchRobot) { return; }
-      this.slideNumber++;
-      this.slide2();
-      this.mustTouchRobot = false;
-    } else if (this.slideNumber === 2) {
-      this.slideNumber++;
-      this.slide3();
-    }
+    if (!this.mustTouchRobot) { return; }
+    this.mustTouchRobot = false;
+
+    this.slideNumber++;
+    this.slide2();
 
     // this.vprobs.soundMetallic.play();
 
   }
 
   async slide2() {
-
-    // slide activated by click on robot
-
-    this.robotTextState = false;
-    await this.sleep(600);
-    this.robotText = this.vprobs.practiceBattery.currentPlanet.robot_text;
-    await this.sleep(100);
-    this.robotTextState = true;
-
-    // this.vprobs.soundPop.play();
-  }
-
-  async slide3() {
     
-
     this.sliderState = true;
 
     // this.vprobs.soundWizard.play();

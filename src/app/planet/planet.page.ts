@@ -23,7 +23,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class PlanetPage implements OnInit {
 
   slideNumber = 0;
-  lastSlideNumber = 3;
+  lastSlideNumber = 2;
 
   monsterState = false;
   planetState = false;
@@ -119,7 +119,7 @@ export class PlanetPage implements OnInit {
       if (this.vprobs.testBattery.isLastPlanet()) {
         this.hideAll();
         await this.sleep(600);
-        this.navCtrl.navigateRoot('/exp-notes');
+        this.navCtrl.navigateRoot('/well-done');
       } else {
         this.hideAll();
         await this.sleep(600);
@@ -176,9 +176,14 @@ export class PlanetPage implements OnInit {
 
     //this.robotTextState = true;
     this.robotState = true;
+    this.robotText = this.vprobs.practiceBattery.currentPlanet.robot_text;
+    await this.sleep(100);
+    this.robotTextState = true;
 
-    this.slideNumber++;
-    this.slide2();
+    this.mustTouchRobot = true;
+
+    //this.slideNumber++;
+    //this.slide2();
 
     // this.vprobs.soundPop.play();
 
@@ -186,15 +191,11 @@ export class PlanetPage implements OnInit {
 
   robotTouched() {
 
-    if (this.slideNumber === 1) {
-      if (!this.mustTouchRobot) { return; }
-      this.slideNumber++;
-      this.slide2();
-      this.mustTouchRobot = false;
-    } else if (this.slideNumber === 2) {
-      this.slideNumber++;
-      this.slide3();
-    }
+    if (!this.mustTouchRobot) { return; }
+    this.mustTouchRobot = false;
+
+    this.slideNumber++;
+    this.slide2();
 
     // this.vprobs.soundMetallic.play();
 
@@ -202,23 +203,9 @@ export class PlanetPage implements OnInit {
 
   async slide2() {
 
-    // slide activated by click on robot
-
-    this.robotTextState = false;
-    await this.sleep(600);
-    this.robotText = this.vprobs.testBattery.currentPlanet.robot_text;
-    await this.sleep(100);
-    this.robotTextState = true;
-
-    // this.vprobs.soundPop.play();
-  }
-
-  async slide3() {
-    
-
     this.sliderState = true;
 
-    // this.vprobs.soundWizard.play();
+    // this.vprobs.soundPop.play();
   }
 
   hideAll() {
