@@ -176,7 +176,7 @@ export class PlanetPage implements OnInit {
 
     //this.robotTextState = true;
     this.robotState = true;
-    this.robotText = this.vprobs.practiceBattery.currentPlanet.robot_text;
+    this.robotText = this.vprobs.testBattery.currentPlanet.robot_text;
     await this.sleep(100);
     this.robotTextState = true;
 
