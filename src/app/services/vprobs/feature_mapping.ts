@@ -126,10 +126,10 @@ export const FEATURE_MAPPING: {
 		},
 		{
 			"feature": "legs",
-			"feature_label_a": "mit Beinen",
-			"feature_label_b": "ohne Beine",
-			"intro_text_a_b": "Monster mit Beinen und Monster ohne Beine.",
-			"intro_text_b_a": "Monster ohne Beine und Monster mit Beinen."
+			"feature_label_a": "mit langen Beinen",
+			"feature_label_b": "ohne lange Beine",
+			"intro_text_a_b": "Monster mit langen Beinen und Monster ohne lange Beine.",
+			"intro_text_b_a": "Monster ohne lange Beine und Monster mit langen Beinen."
 		}
 
 	]

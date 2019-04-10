@@ -55,7 +55,7 @@ export class IntroPage implements OnInit {
     if (this.slideNumber > this.lastSlideNumber) {
       this.hideAll();
       await this.sleep(600);
-      this.navCtrl.navigateRoot('/practice-intro');
+      this.navCtrl.navigateRoot('/practice-slider');
     }
 
     if (typeof this['slide' + this.slideNumber] === 'function') {

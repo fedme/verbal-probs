@@ -2,13 +2,12 @@ import { FEATURE_MAPPING } from './feature_mapping';
 import { FEATURE_TERM_MAPPING } from './feature_term_mapping';
 import { Utils } from '../common/utils';
 
-export const N_PRACTICE: number = 6;
-export const N_TEST: number = 12;
+export const N_PRACTICE: number = 4;
+export const N_TEST: number = 14;
 
 export const PRACTICE_FREQ_TERMS: string[] = [
     'nie',
-    'immer',
-    'haelfte'
+    'immer'
 ];
 
 export const TEST_FREQ_TERMS: string[] = [
@@ -17,13 +16,13 @@ export const TEST_FREQ_TERMS: string[] = [
     'manchmal',
     'häufig',
     'oft',
-    'meistens'
+    'meistens',
+    'haelfte'
 ];
 
 export const PRACTICE_PROB_TERMS: string[] = [
     'unmöglich',
-    'sicher',
-    'gleichwahrscheinlich'
+    'sicher'
 ];
 
 export const TEST_PROB_TERMS: string[] = [
@@ -32,7 +31,8 @@ export const TEST_PROB_TERMS: string[] = [
     'eventuell',
     'vielleicht',
     'unsicher',
-    'wahrscheinlich'
+    'wahrscheinlich',
+    'gleichwahrscheinlich'
 ];
 
 export const FEATURES: string[] = [

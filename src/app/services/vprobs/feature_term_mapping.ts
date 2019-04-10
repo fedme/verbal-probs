@@ -1452,101 +1452,101 @@ export const FEATURE_TERM_MAPPING: {
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'nie',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>nie</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>nie</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'selten',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>selten</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>selten</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'gelegentlich',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>gelegentlich</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>gelegentlich</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'manchmal',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>manchmal</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>manchmal</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'häufig',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>häufig</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>häufig</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'oft',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>oft</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>oft</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'meistens',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>meistens</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>meistens</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'immer',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>immer</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>immer</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'haelfte',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>in der Hälfte der Fälle</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>in der Hälfte der Fälle</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'frequency',
 			'term': 'haelfte',
-			'robot_text': 'Die Monster auf dem Planeten haben <b>in der Hälfte der Fälle</b> Beine.',
-			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben Beine?',
-			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine Beine?',
-			'slider_text_a': 'Alle haben Beine',
-			'slider_text_b': 'Keines hat Beine'
+			'robot_text': 'Die Monster auf dem Planeten haben <b>in der Hälfte der Fälle</b> lange Beine.',
+			'question_text_a': 'Wie viele von den Monstern auf dem Planeten haben lange Beine?',
+			'question_text_b': 'Wie viele von den Monstern auf dem Planeten haben keine lange Beine?',
+			'slider_text_a': 'Alle haben lange Beine',
+			'slider_text_b': 'Keines hat lange Beine'
 		},
 		{
 			'feature': 'toothgap',
@@ -3092,91 +3092,91 @@ export const FEATURE_TERM_MAPPING: {
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'unmöglich',
-			'robot_text': 'Es ist <b>unmöglich</b>, dass das Monster Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Es ist <b>unmöglich</b>, dass das Monster lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'unwahrscheinlich',
-			'robot_text': 'Es ist <b>unwahrscheinlich</b>, dass das Monster Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Es ist <b>unwahrscheinlich</b>, dass das Monster lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'möglich',
-			'robot_text': 'Es ist <b>möglich</b>, dass das Monster Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Es ist <b>möglich</b>, dass das Monster lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'eventuell',
-			'robot_text': 'Das Monster hat <b>eventuell</b> Beine.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Das Monster hat <b>eventuell</b> lange Beine.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'vielleicht',
-			'robot_text': 'Das Monster hat <b>vielleicht</b> Beine.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Das Monster hat <b>vielleicht</b> lange Beine.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'unsicher',
-			'robot_text': 'Es ist <b>unsicher</b>, dass das Monster Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Es ist <b>unsicher</b>, dass das Monster lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'wahrscheinlich',
-			'robot_text': 'Es ist <b>wahrscheinlich</b>, dass das Monster Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Es ist <b>wahrscheinlich</b>, dass das Monster lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'sicher',
-			'robot_text': 'Es ist <b>sicher</b>, dass das Monster Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Es ist <b>sicher</b>, dass das Monster lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'gleichwahrscheinlich',
-			'robot_text': 'Dass das Monster Beine hat ist <b>genauso wahrscheinlich</b> wie, dass das Monster keine Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Dass das Monster lange Beine hat ist <b>genauso wahrscheinlich</b> wie, dass das Monster keine lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'toothgap',
@@ -3192,11 +3192,11 @@ export const FEATURE_TERM_MAPPING: {
 			'feature': 'legs',
 			'term_type': 'probability',
 			'term': 'gleichwahrscheinlich',
-			'robot_text': 'Dass das Monster Beine hat ist <b>genauso wahrscheinlich</b> wie, dass das Monster keine Beine hat.',
-			'question_text_a': 'Hat das Monster eher Beine oder eher keine Beine?',
-			'question_text_b': 'Hat das Monster eher keine Beine oder eher Beine?',
-			'slider_text_a': 'Auf jeden Fall Beine',
-			'slider_text_b': 'Auf keinen Fall Beine'
+			'robot_text': 'Dass das Monster lange Beine hat ist <b>genauso wahrscheinlich</b> wie, dass das Monster keine lange Beine hat.',
+			'question_text_a': 'Hat das Monster eher lange Beine oder eher keine lange Beine?',
+			'question_text_b': 'Hat das Monster eher keine lange Beine oder eher lange Beine?',
+			'slider_text_a': 'Auf jeden Fall lange Beine',
+			'slider_text_b': 'Auf keinen Fall lange Beine'
 		},
 		{
 			'feature': 'toothgap',

@@ -27,6 +27,10 @@
     "ROBOT_TEXT": "Hallo, ich bin Robbie!",
     "NEXT": "Weiter"
   },
+  "PRACTICE_SLIDER": {
+    "TEXT_1": "Das hier ist die Steuerungskonsole in deiner Rakete!",
+    "TEXT_2": "Damit kannst du Antworten auf alle Fragen im Spiel geben!"
+  },
   "PRACTICE_INTRO": {
     "TITLE": "Hallo Forscher, lass uns üben!",
     "TITLE_F": "Hallo Forscherin, lass uns üben!"
