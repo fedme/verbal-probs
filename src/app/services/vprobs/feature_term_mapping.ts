@@ -3205,8 +3205,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Es ist <b>unmöglich</b>, dass das Monster eine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3215,8 +3215,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Es ist <b>unwahrscheinlich</b>, dass das Monster eine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3225,8 +3225,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Es ist <b>möglich</b>, dass das Monster eine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3235,8 +3235,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Das Monster hat <b>eventuell</b> eine Zahnlücke.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3245,8 +3245,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Das Monster hat <b>vielleicht</b> eine Zahnlücke.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3255,8 +3255,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Es ist <b>unsicher</b>, dass das Monster eine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3265,8 +3265,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Es ist <b>wahrscheinlich</b>, dass das Monster eine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3275,8 +3275,8 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Es ist <b>sicher</b>, dass das Monster eine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		},
 		{
 			'feature': 'toothgap',
@@ -3285,7 +3285,7 @@ export const FEATURE_TERM_MAPPING: {
 			'robot_text': 'Dass das Monster eine Zahnlücke hat ist <b>genauso wahrscheinlich</b> wie, dass das Monster keine Zahnlücke hat.',
 			'question_text_a': 'Hat das Monster eher eine Zahnlücke oder eher keine Zahnlücke?',
 			'question_text_b': 'Hat das Monster eher keine Zahnlücke oder eher eine Zahnlücke?',
-			'slider_text_a': 'Auf jeden Fall Mund',
-			'slider_text_b': 'Auf keinen Fall Mund'
+			'slider_text_a': 'Auf jeden Fall Zahnlücke',
+			'slider_text_b': 'Auf keinen Fall Zahnlücke'
 		}
 	];

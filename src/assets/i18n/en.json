@@ -27,7 +27,7 @@
     "TITLE": "Herzlich willkommen, Forscher und Entdecker!",
     "TITLE_F": "Herzlich willkommen, Forscherin und Entdeckerin!",
     "TEXT_1": "Erkunde mit uns das Weltall, reise zu verschiedenen Planeten und entdecke die dort lebenden Monster! Begleitet wirst du dabei von deinem treuen Gefährten Robbie, dem Roboter!",
-    "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen  Besuch freuen. Dein Freund Robbie war bereits auf allen Planeten und kennt sich aus! Von ihm lernst du alles über die Monster und Planeten!",
+    "TEXT_2": "Auf jedem Planeten wohnen nette Monster, die sich über deinen  Besuch freuen. Dein Freund Robbie war bereits auf allen Planeten und kennt sich aus! Er weiss alles und sagt immer die Wahrheit!",
     "TEXT_3": " Deine Aufgabe ist es, auf den verschiedenen Planeten Fragen über die dort lebenden Monster richtig zu beantworten! Robbie hilft dir dabei mit seinem Wissen!",
     "ROBOT_TEXT": "Hallo, ich bin Robbie!",
     "NEXT": "Weiter"
@@ -49,7 +49,7 @@
     "TEXT": "Auf geht’s ins Weltall!"
   },
   "PLANET": {
-    "TRAVEL_TEXT": "...auf zu einem neuen Planeten!",
+    "TRAVEL_TEXT": "...auf zum nächsten Planeten!",
     "INTRO_STATIC": "Auf diesem Planeten gibt es genau zwei Arten von Monstern:",
     "QUESTION_STATIC_FREQ": "Was denkst du:",
     "QUESTION_STATIC_PROB": "Stell dir vor du landest und triffst eines der Monster. Was denkst du:",

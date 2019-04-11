@@ -101,17 +101,17 @@ export class PlanetPage implements OnInit {
 
     if (this.slideNumber > this.lastSlideNumber) {
 
-      if (!this.sliderTouched) {
-        const msg = await this.translate.get('DIALOGS.MUST_TOUCH_SLIDER').toPromise();
-        const toast = await this.toastCtrl.create({
-          message: msg,
-          duration: 1000,
-          position: 'top',
-          color: 'danger'
-        });
-        toast.present();
-        return;
-      }
+      // if (!this.sliderTouched) {
+      //   const msg = await this.translate.get('DIALOGS.MUST_TOUCH_SLIDER').toPromise();
+      //   const toast = await this.toastCtrl.create({
+      //     message: msg,
+      //     duration: 1000,
+      //     position: 'top',
+      //     color: 'danger'
+      //   });
+      //   toast.present();
+      //   return;
+      // }
 
       // Save slider val
       this.vprobs.testBattery.currentPlanet.slider_val = this.sliderVal;

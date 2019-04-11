@@ -51,19 +51,19 @@ export class PracticeSliderPage implements OnInit {
   }
 
   async next() {
-    if (!this.sliderTouched) {
-      const msg = await this.translate.get('DIALOGS.MUST_TOUCH_SLIDER').toPromise();
-      const toast = await this.toastCtrl.create({
-        message: msg,
-        duration: 1000,
-        position: 'top',
-        color: 'danger'
-      });
-      toast.present();
-      return;
-    }
+    // if (!this.sliderTouched) {
+    //   const msg = await this.translate.get('DIALOGS.MUST_TOUCH_SLIDER').toPromise();
+    //   const toast = await this.toastCtrl.create({
+    //     message: msg,
+    //     duration: 1000,
+    //     position: 'top',
+    //     color: 'danger'
+    //   });
+    //   toast.present();
+    //   return;
+    // }
   
-    this.navCtrl.navigateRoot('/practice-intro');
+    this.navCtrl.navigateRoot('/practice-planet');
       
   }
 

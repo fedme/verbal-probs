@@ -49,7 +49,7 @@ export class PracticeIntroPage implements OnInit {
   async next() {
     this.hideAll();
     await this.sleep(600);
-    this.navCtrl.navigateRoot('/practice-planet');
+    this.navCtrl.navigateRoot('/practice-slider');
 
     // this.vprobs.soundClick.play();
   }
